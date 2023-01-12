@@ -1,0 +1,39 @@
+// Hero Section
+.hero-section {
+  @apply text-center py-11 lg:py-16;
+  .hero--content {
+    @apply relative z-20;
+  }
+  background: url(https://cyber-battles-dev.s3.amazonaws.com/images/homepage/home-banner.png) left 0px
+    top 0px / cover no-repeat;
+  h1,
+  h2 {
+    @apply font-bold leading-normal;
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: calc(24px + (50 - 24) * ((100vw - 375px) / (1920 - 375)));
+  }
+  h2 {
+    font-size: calc(24px + (60 - 24) * ((100vw - 375px) / (1920 - 375)));
+  }
+  p {
+    @apply px-12;
+    font-size: calc(12px + (20 - 12) * ((100vw - 375px) / (1920 - 375)));
+  }
+  button {
+    @apply mt-4;
+  }
+  .highlighted--features {
+    @apply grid grid-cols-3 gap-4 sm:gap-10 md:gap-20 mt-12 justify-items-center place-content-center w-fit mx-auto;
+    .icon-box {
+      @apply flex justify-between gap-3 flex-col items-center;
+    }
+    img {
+      @apply mx-auto;
+    }
+    span {
+      @apply text-xs md:text-lg font-semibold;
+    }
+  }
+}

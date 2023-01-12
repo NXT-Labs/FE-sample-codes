@@ -1,0 +1,45 @@
+.detailed-scroll-box {
+  @apply bg-secondary rounded-[20px] py-[38px] pr-3 mb-10 relative;
+  .scroller-box{
+    @apply  overflow-y-scroll pl-6 pr-3;
+    &::-webkit-scrollbar-track {
+      @apply bg-secondary ;
+      -webkit-box-shadow: inset 0px 0px 0px #212529;
+    }
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #212529;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply absolute right-0 top-0 mr-10;
+      background-color: #343a40;
+      border-radius: 30px;
+    }
+
+    .detailed-scroll-box--content {
+      @apply h-[473px] ;
+      h3 {
+        @apply font-bold text-lg uppercase;
+        @include r-plus{
+          @apply text-2xl;
+        }
+      }
+      h4 {
+        @apply font-semibold text-sm;
+        @include r-plus{
+          @apply text-lg;
+        }
+      }
+      p {
+        @apply font-normal text-xs my-5;
+        @include r-medium{
+          @apply text-sm my-[26px];
+        }
+      }
+  
+      @include r-medium {
+        @apply h-[380px];
+      }
+    }
+  }
+}

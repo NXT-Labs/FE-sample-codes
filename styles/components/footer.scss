@@ -1,0 +1,135 @@
+footer{
+  @apply bg-secondary py-7 lg:py-8;
+  .wrapper{
+    @apply px-6;
+  }
+  .footer-row-1{
+    @apply flex gap-6;
+    .right-col{
+      @apply flex flex-col gap-5 justify-evenly;
+      .language-selector{
+        @apply flex justify-between gap-2 items-center;
+      }
+      select{
+        @apply bg-secondary text-white w-[78px] mb-0 px-0 py-0;
+      }
+      @include r-xsmall{
+        @apply items-center;
+      }
+      @include r-plus{
+        @apply items-end
+      }
+    }
+    .left-col{
+      @apply w-full;
+      .footer-menu-links{
+        @apply grid mt-9 gap-0;
+        li a{
+          @apply uppercase;
+          @include r-xsmall{
+            @apply font-medium text-sm leading-[42px];
+          }
+          @include r-medium{
+            @apply font-bold text-base leading-7;
+          }
+          &:hover{
+            @apply text-light;
+          }
+        }
+        @include r-xsmall{
+          @apply grid-cols-1;
+        }
+        @include r-medium{
+          @apply grid-cols-4;
+        }
+      }
+    }
+    @include r-xsmall{
+      @apply flex-col justify-center items-center text-center;
+    }
+    @include r-plus{
+      @apply flex-row justify-between items-start text-left;
+    }
+  }
+
+  .footer-row-2{
+    @apply flex mt-10 gap-7 text-sm;
+    .footer-col{
+      h4{
+        @apply mb-3 font-medium;
+      }
+      ul{
+        @apply flex gap-[20px];
+        @include r-xsmall{
+          @apply items-center justify-center;
+        }
+        @include r-plus{
+          @apply items-start justify-start;
+        }
+      }
+      a{
+        &:hover img{
+          filter: invert(50%);
+        }
+      }
+      .foot-links{
+        @apply block font-light;
+        li{
+          @apply inline pr-[10px] pl-[10px] relative;
+          &:first-child{
+            @apply pl-0;
+          }
+          &:not(:last-child){
+            border-right: 1px solid #fff;
+          }
+        }
+      }
+      .copyright{
+        @apply font-normal text-light;
+        @include r-xsmall{
+          @apply text-center;
+        }
+        @include r-plus{
+          @apply text-right;
+        }
+      }
+    }
+    @include r-xsmall{
+      @apply flex-col justify-center items-center text-center;
+      .col-1, .col-2, .col-3, .col-4{
+        width: 100%;
+      }
+      .col-1{
+        order: 2;
+      }
+      .col-2{
+        order: 3;
+      }
+      .col-3{
+        order: 4;
+      }
+      .col-4{
+        order: 1;
+      }
+    }
+    @include r-plus{
+      @apply flex-row justify-between text-left;
+      .col-1{
+        width: 15%;
+        order: 1;
+      }
+      .col-2{
+        width: 25%;
+        order: 2;
+      }
+      .col-3{
+        width: 35%;
+        order: 3;
+      }
+      .col-4{
+        width: 25%;
+        order: 4;
+      }
+    }
+  }
+}

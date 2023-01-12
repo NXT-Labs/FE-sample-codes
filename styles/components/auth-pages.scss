@@ -1,0 +1,79 @@
+.auth-template {
+  @apply grid gap-0 md:gap-0;
+  background: url(https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-ellipse.png) right 0px top
+      0px / contain no-repeat;
+  grid-template-rows: 200px 1fr;
+  @include r-laptop{
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .main--heading {
+    @apply mb-2 text-center font-bold;
+    font-size: calc(24px + (48 - 24) * ((100vw - 300px) / (1920 - 300)));
+    line-height: 1.2;
+  }
+  .checkbox--field {
+    @apply text-sm flex items-center gap-2;
+    input,
+    label {
+      @apply inline-block w-auto mb-0 align-middle;
+    }
+  }
+  .banner {
+    @apply relative w-full max-w-full;
+    min-height: 200px;
+    background: url('https://cyber-battles-dev.s3.amazonaws.com/images/authentication-pages/signup-banner.png')
+      left 0px top 0px / cover no-repeat;
+    &.login{
+      background: url('https://cyber-battles-dev.s3.amazonaws.com/images/authentication-pages/sign-in-banner.webp')
+      left 0px top 0px / cover no-repeat;
+    }
+    @include r-medium{
+      @apply h-full;
+    }
+    @include r-laptop{
+      @apply h-full min-h-screen;
+    }
+  }
+  .logo{
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50;
+  }
+  .auth-right {
+    @apply py-6 px-4 sm:px-10 md:px-20 lg:px-16 lg:py-16 xl:py-20 xl:px-24 flex flex-col justify-center items-center;
+      p{
+        @apply text-center;
+        a{
+          @apply ml-1
+        }
+      }
+      form{
+        @apply w-full
+      }
+  }
+  .auth-left{
+    @apply relative;
+    &::before{
+      content:'';
+      @apply bg-primary max-w-full max-h-full absolute top-0 left-0 w-full min-w-full min-h-full h-full block opacity-60 z-30;
+    }
+  }
+  .recovery--form{
+    @apply mt-6 mb-12
+  }
+  .otp{
+    @apply grid grid-cols-4 gap-8 mt-7 justify-items-center place-content-center;
+    grid-template-columns: 50px 50px 50px 50px;
+    input{
+      @apply w-12 h-12 rounded text-xl p-2 text-center;
+    }
+    input:focus, 
+    input:focus-visible,
+    select:focus-visible,
+    select:focus {
+      @apply text-white outline outline-light-blue;
+    }
+  }
+  .emailSentTo{
+    @apply font-semibold lowercase
+  }
+}

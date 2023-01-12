@@ -1,0 +1,21 @@
+// GAME LOGOS
+.game-logos {
+  @apply grid justify-items-center items-center mt-[70px] pb-[70px] gap-52 overflow-x-auto overflow-y-hidden whitespace-nowrap pl-16;
+  grid-template-columns: repeat(5, minmax(0, auto));
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  img,
+  span {
+    @apply h-[66px] object-contain mx-auto;
+  }
+
+  @include r-laptop {
+    @apply overflow-x-hidden gap-14 pl-0;
+  }
+}

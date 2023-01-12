@@ -1,0 +1,169 @@
+html {
+  @apply box-border overflow-x-hidden;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  @apply bg-primary font-poppins m-0 text-white;
+}
+
+
+.blue--link,
+.blue--link--underlined{
+  @apply text-light-blue underline transition-all duration-300 ease-in-out hover:text-light hover:no-underline;
+}
+.blue--link--underlined{
+  @apply no-underline;
+}
+
+// Headings
+.featured-heading{
+  @apply font-bold w-max relative pr-6 flex items-center gap-4 mx-auto md:ml-0 md:mr-auto;
+  &.alt{
+    @apply pr-0;
+  }
+  &::after{
+    @apply absolute left-0 -bottom-[10px] w-full h-1 bg-blue-700;
+    content: '';
+  }
+  @include r-xsmall{
+    @apply text-[15px];
+  }
+  @include r-small{
+    @apply text-lg;
+  }
+  @include r-medium{
+      @apply  text-[32px];
+  }
+}
+
+@mixin list-dot{
+  @apply absolute bg-light rounded-full;
+  content: "";
+  left: -14px;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.green-link{
+  @apply text-accent--green capitalize flex items-center gap-1 transition-all ease-in-out duration-300;
+  img{
+    @apply w-4;
+  }
+  &:hover{
+    @apply text-white;
+    img{
+      @apply brightness-0 invert;
+    }
+  }
+  @include r-xsmall{
+    @apply text-[11px];
+  }
+  @include r-small{
+    @apply text-sm;
+  }
+  @include r-extra-large{
+    @apply text-[18px];
+  }
+}
+.sub-title{
+  @apply my-4 text-xs sm:text-base md:text-lg text-center md:text-left font-normal;
+}
+
+.custom-img {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.home-section{
+  @apply py-16;
+}
+.ellipses{
+  @apply relative w-full h-full overflow-x-hidden;
+  &::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+  }
+  @include r-xsmall{
+    &::after{
+      background: 
+      url("https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-right-sm.svg") right 0px top 0px/contain no-repeat, 
+      url("https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-left-sm.svg") left 0px bottom 91%/auto no-repeat;
+    }
+  }
+  @include r-plus{
+    &::after{
+      content: '';
+      background: 
+      url('https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-right.svg') right 0px top 0px/ auto no-repeat,
+      url('https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-left.svg') left 0px top 25%/ auto no-repeat,
+      url('https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-right-sm.svg') right 0px top 70%/ auto no-repeat,
+      url('https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-left-sm.svg') left 0px bottom 8%/ auto no-repeat;
+    }
+  }
+}
+
+.dropdown-filters-buttons {
+  @apply grid gap-3 items-center;
+  grid-template-columns: repeat(1,172px) 100px;
+  select{
+    @apply m-0 text-xs text-white font-medium capitalize;
+  }
+  button{
+    @apply text-sm capitalize min-w-max px-4 py-2;
+  }
+  @include r-medium{
+   grid-template-columns: repeat(2,166px) 100px;
+  }
+  @include r-plus{
+    grid-template-columns: repeat(3,172px) 100px;
+  }
+}
+.error_msg, .error_msg_fixed{
+  @apply bg-error;
+}
+.success_msg, .success_msg_fixed{
+  @apply bg-success;
+}
+.warning_msg, .warning_msg_fixed{
+  @apply bg-warning;
+}
+.error_msg,
+.success_msg,
+.warning_msg{
+  @apply text-white text-xs font-medium rounded-[5px] p-[9px] flex justify-between items-center mt-8 fixed top-[4%] left-1/2 -translate-x-1/2 z-[9999];
+}
+.error-box{
+  @apply fixed top-[4%] left-1/2 -translate-x-1/2 z-[9999];
+}
+
+// STYLES FOR FIXED AND CONSTANT ERRORS/WARNINGS
+.error_msg_fixed,
+.success_msg_fixed,
+.warning_msg_fixed{
+  @apply text-white text-xs font-medium rounded-none p-[9px] flex justify-center items-center w-full max-w-full mt-0 fixed top-[0%] left-0 z-[9999];
+}
+.page-loader{
+  @apply w-full h-full fixed top-0 left-0 flex items-center justify-center z-[999999];
+  background-color: rgb(9 18 37 / 91%);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+}
+
+.no-pointer-event{
+  @apply pointer-events-none;
+}

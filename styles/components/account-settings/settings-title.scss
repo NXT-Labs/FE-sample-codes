@@ -1,0 +1,7 @@
+.page-title{
+  @apply h-[120px] flex items-center justify-start font-bold text-[26px] px-[30px] sticky top-0 z-30;
+  background: linear-gradient(180deg, #091225 0%, #092F5E 100%);
+  @include r-medium{
+    @apply relative;
+  }
+}

@@ -1,0 +1,58 @@
+.btn-solid {
+  @apply bg-light-blue border-light-blue text-white text-center text-sm block mx-auto w-max border rounded-[5px] py-1.5 sm:py-3 px-5 mt-6 transition-all ease-in-out duration-300;
+  &:hover {
+    @apply bg-transparent border-light-blue;
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+  }
+  &.wide {
+    @apply md:px-16;
+  }
+  @include r-medium {
+    min-width: 159px;
+  }
+}
+.btn-bordered {
+  @apply bg-transparent border-light-blue text-white text-center text-sm block w-max border rounded-[5px] py-1.5 sm:py-3 px-5 mt-6 transition-all ease-in-out duration-300;
+  &:hover {
+    @apply bg-light-blue border-light-blue;
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+  }
+  &.wide {
+    @apply md:px-16;
+  }
+  @include r-medium {
+    min-width: 159px;
+  }
+}
+.view-btn {
+  @apply bg-grey text-light uppercase text-lg leading-7 text-center block w-full font-semibold;
+  &:hover {
+    @apply bg-light--blue text-white;
+  }
+}
+
+button.setting-button {
+  @apply w-[48px] h-[44px]  bg-accent--blue rounded-[4px] grid place-content-center transition-all ease-in-out duration-300;
+  &:hover {
+    @apply bg-grey;
+  }
+}
+
+button#see-more {
+  @apply block text-light--blue text-xs font-semibold capitalize block;
+  margin: 15px auto 35px;
+  @include r-plus{
+    @apply hidden;
+  }
+}
+button#see-all{
+  @apply text-sm font-semibold uppercase flex flex-col-reverse justify-center items-center mx-auto my-6 transition-all ease-out duration-300;
+  &:hover{
+    @apply text-light--blue;
+  }
+  @include r-laptop{
+    @apply hidden;
+  }
+}

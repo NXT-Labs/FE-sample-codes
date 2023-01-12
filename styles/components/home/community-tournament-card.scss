@@ -1,0 +1,89 @@
+.tournaments{
+  @apply grid items-center gap-y-14 gap-x-6 mb-12 mt-5;
+  @include r-xsmall{
+    @apply grid-cols-1;
+  }
+  @include r-plus{
+    @apply grid-cols-2;
+  }
+  @include r-laptop{
+    @apply grid-cols-3;
+  }
+  @include r-desktop-large{
+    @apply  gap-x-9;
+  }
+}
+.tournament-card{
+  @apply bg-secondary max-w-[330px] w-full rounded-[20px] px-[22px] pb-20 relative mt-11 transition-all ease-out duration-500 cursor-pointer mx-auto;
+  .tournament-image{
+    @apply relative -top-11 w-max h-[129px] rounded-[10px];
+    border: 1px solid #6C757D;
+  }
+  .price-badge{
+    @apply bg-grey h-[85px] text-light text-sm text-center absolute z-70 text-center text-lg font-bold leading-3 transition-all ease-out duration-500;
+      right: 8%;
+      top: -0.5px;
+    h4{
+      @apply mt-[10px] flex items-center justify-center gap-1 text-2xl leading-20;
+    }
+    @include r-xsmall{
+      @apply w-[78px];
+    }
+    @include r-small{
+      @apply w-[98px];
+    }
+  }
+  h4{
+    @apply font-normal uppercase;
+  }
+  p{
+    @apply font-bold leading-6;
+  }
+  .details{
+    @apply -mt-6 mb-4;
+    h3{
+      @apply text-lg font-bold leading-7;
+    }
+    p{
+      @apply text-sm leading-5 font-normal;
+    }
+  }
+  .starts-in{
+    @apply text-orange;
+  }
+  .team-info{
+    @apply grid grid-cols-3 gap-7 mb-4;
+  }
+  .badge-triangle {
+    @apply w-0 h-0 absolute -bottom-[1px] left-1/2 -translate-x-1/2 opacity-100 z-[99999];
+    border-left: 48px solid transparent;
+    border-right: 48px solid transparent;
+    border-bottom: 20px solid #212529;
+  }
+  button{
+    @apply absolute left-0 bottom-0 rounded-bl-[20px] rounded-br-[20px] py-4 transition-all ease-out duration-500;
+  }
+  &:hover{
+    .price-badge{
+      @apply bg-[#D38D03] text-white;
+    }
+    button{
+      @apply bg-light-blue text-white;
+    }
+  }
+
+  @include r-xsmall{
+    h4,p{
+      @apply text-xs;
+    }
+  }
+  @include r-small{
+    h4,p{
+      @apply text-sm;
+    }
+  }
+  @include r-desktop-large{
+    @apply max-w-full;
+  }
+}
+

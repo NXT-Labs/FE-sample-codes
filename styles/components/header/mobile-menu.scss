@@ -1,0 +1,19 @@
+.mobile-menu{
+  @apply fixed z-70 bg-secondary w-[295px] min-h-screen h-full left-0 top-0 mr-auto pb-7 text-[13px] font-medium capitalize pt-12 px-3 pb-40;
+  .mobile-menu-list{
+    @apply mt-9;
+    li{
+      @apply text-sm font-medium mb-2 px-8 py-[14px];
+      &:hover{
+        @apply bg-accent--blue rounded-md;
+      }
+    }
+
+  }
+}
+.account-buttons{
+  @apply flex items-center justify-center gap-5 absolute bottom-0 mb-12;
+  button{
+    @apply min-w-[120px] text-xs capitalize;
+  }
+}

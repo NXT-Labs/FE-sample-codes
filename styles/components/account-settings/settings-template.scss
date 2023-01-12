@@ -1,0 +1,25 @@
+.account-setting-template{
+  @apply px-4 pb-[43px] pt-0 relative;
+  .filters-row{
+    @apply flex items-center ;
+    select{
+      @apply max-w-[192px] mt-[43px] -mb-5;
+    }
+    @include r-medium{
+      @apply justify-end;
+    }
+  }
+  .setting-title{
+    @apply w-full block text-sm font-bold relative z-20 mt-[43px];
+    h3{
+      @apply w-max bg-primary  relative z-20 pr-5;
+    }
+    &:after{
+      @apply absolute w-full h-[1px] bg-grey top-1/2 z-10;
+      content:'';
+    }
+  }
+  @include r-medium{
+    @apply px-8;
+  }
+}

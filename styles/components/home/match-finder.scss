@@ -1,0 +1,27 @@
+.matchfiner-filters{
+  @apply flex justify-between items-center flex-row;
+  @include r-xsmall{
+    @apply flex-col;
+    .dropdown-filters{
+      grid-template-columns: repeat(2,135px);
+      gap: 25px;
+    }
+  }
+  @include r-medium{
+    @apply flex-row;
+    .dropdown-filters{
+      grid-template-columns: repeat(2,auto);
+      gap: 10px;
+    }
+  }
+}
+.swipe-indicator{
+  @apply flex items-center justify-center gap-1 font-normal text-xs text-center;
+  color: #8C8C8C;
+  @include r-xsmall{
+    @apply flex;
+  }
+  @include r-laptop{
+    @apply hidden;
+  }
+}

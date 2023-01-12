@@ -1,0 +1,183 @@
+.player-info--box {
+  @apply relative bg-secondary rounded-tl rounded-tr max-w-full w-[full] h-auto mx-auto -mt-[20%] text-center  pt-[70px];
+  .member-type-logo {
+    @apply absolute left-0 top-0 px-5 py-7 w-[115px];
+    background: url('https://cyber-battles-dev.s3.amazonaws.com/images/generic/white-triangle.svg')
+      center top 0px / auto no-repeat;
+      @include r-plus{
+        @apply w-auto;
+      }
+  }
+  .pfp {
+    @apply absolute rounded-full w-[124px] h-[124px] left-1/2 -translate-x-1/2 -translate-y-full border-4 border-accent--gold bg-accent--gold;
+    @include r-plus{
+      @apply w-[140px] h-[140px];
+    }
+  }
+  h3 {
+    @apply mt-4 font-bold text-[32px] uppercase;
+  }
+  h4 {
+    @apply font-semibold text-lg uppercase;
+  }
+  ul.profile-views {
+    @apply text-xs font-semibold uppercase my-2;
+    li {
+      @apply inline-block mx-0 px-4 leading-4;
+      &:first-child {
+        @apply border-r-[3px] border-white;
+      }
+    }
+    @include r-medium{
+      @apply text-lg;
+    }
+  }
+  @include r-plus{
+    @apply w-[85%] max-w-full;
+  }
+  @include r-desktop-large{
+    @apply w-[70%] -mt-[15%];
+  }
+  @include r-extra-large{
+    @apply -mt-[12%];
+  }
+}
+
+.games-ids {
+  @apply flex justify-center text-center gap-[14px] my-8 flex-wrap;
+  p {
+    @apply text-xs font-semibold;
+    @include r-plus{
+      @apply text-lg gap-[52px];
+    }
+  }
+  @include r-small{
+    @apply gap-[30px];
+  }
+  @include r-medium{
+    @apply gap-[60px];
+  }
+  @include r-plus{
+    @apply gap-[82px];
+  }
+}
+
+.rankings {
+  @apply flex flex-row justify-center items-center gap-0 flex-wrap;
+  div {
+    @apply w-max px-[15px] h-[105px] flex-grow;
+    &.rank {
+      @apply flex items-center justify-center pr-0;
+    }
+    &.rank-trophie{
+      @apply px-0 border-0;
+    }
+    &:first-child {
+      @apply w-max;
+    }
+    h3 {
+      @apply text-orange uppercase text-sm font-normal;
+      @include r-medium{
+        @apply text-lg;
+      }
+    }
+    h4 {
+      @apply text-sm font-semibold;
+      &.total-earnings {
+        @apply flex items-center gap-1 justify-center;
+      }
+      @include r-plus{
+        @apply text-lg;
+      }
+    }
+    p {
+      @apply text-xs text-light uppercase font-normal;
+      @include r-medium{
+        @apply text-base;
+      }
+    }
+    @include r-plus{
+      @apply border-0 ;
+    }
+    @include r-laptop{
+      @apply border-r border-light px-[35px] ;
+      &:last-child {
+        @apply border-0 pl-0;
+      }
+      &:nth-child(3){
+        @apply border-r;
+      }
+    }
+  }
+  ul.recent-matches {
+    @apply my-0 flex gap-5 justify-center;
+    li {
+      @apply border-0 text-lg font-normal uppercase;
+      span.won {
+        @apply w-max relative;
+        &::after {
+          content: '';
+          @apply absolute w-[3px] h-[3px] rounded-full bg-accent--green bottom-0 left-1/2 -translate-x-1/2;
+        }
+      }
+      span.lost {
+        @apply w-max relative;
+        &::after {
+          content: '';
+          @apply absolute w-[3px] h-[3px] rounded-full bg-red-700 bottom-0 left-1/2 -translate-x-1/2;
+        }
+      }
+    }
+  }
+  @include r-plus{
+    @apply flex-row items-start;
+  }
+}
+.trophie-boxes {
+  @apply grid grid-cols-2 justify-center gap-0 mt-8 rounded-xl max-w-full mx-4;
+  @include r-laptop {
+    @apply grid-cols-4 rounded-none mx-0;
+  }
+  .trophie-box {
+    @apply flex flex-col gap-3 px-10 pt-4 justify-around;
+    h3 {
+      @apply text-sm font-semibold uppercase mt-0 leading-none;
+      @include r-laptop{
+        @apply text-base;
+      }
+    }
+    &.elite {
+      @apply border-b-4 border-b-[#00BAF5] bg-[#00BAF5] rounded-tl-xl;
+      @include r-laptop {
+        @apply bg-grey rounded-none;
+      }
+    }
+    &.gold {
+      @apply border-b-4 border-b-accent--gold bg-accent--gold rounded-tr-xl;
+      @include r-laptop {
+        @apply bg-grey rounded-none;
+      }
+    }
+    &.silver {
+      @apply border-b-4 border-b-[#898989] bg-[#898989] rounded-bl-xl;
+      @include r-laptop {
+        @apply bg-grey rounded-none;
+      }
+    }
+    &.bronze {
+      @apply border-b-4 border-b-accent--orange bg-accent--orange rounded-br-xl;
+      @include r-laptop {
+        @apply bg-grey rounded-none;
+      }
+    }
+    p {
+      @apply text-base font-bold;
+      @include r-laptop{
+        @apply text-[32px] leading-30;
+      }
+    }
+    @include r-laptop{
+      @apply items-start text-left flex-row  justify-start;
+    }
+  }
+}

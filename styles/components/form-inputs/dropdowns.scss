@@ -1,0 +1,60 @@
+.dropdown-filters {
+  @apply grid gap-5 my-4;
+  ul {
+    @apply p-4 bg-tabs--grey rounded-md text-white appearance-none text-sm min-w-[195px] max-h-[44px] h-auto;
+    @include r-xsmall {
+      @apply min-w-[135px] mb-1  py-0 mx-auto;
+    }
+    @include r-small {
+      @apply w-full max-w-full;
+    }
+    @include r-medium {
+      @apply ml-0;
+    }
+    li {
+      &:hover {
+        @apply text-accent--green;
+      }
+    }
+  }
+  @include r-xsmall {
+    @apply gap-3;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include r-plus {
+    @apply gap-3;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include r-plus {
+    @apply gap-3;
+    grid-template-columns: repeat(3, 195px);
+  }
+}
+.custom-dropdown {
+  @apply relative;
+  .dropdown-title {
+    @apply flex justify-between items-center px-4 py-2 font-medium text-xs cursor-pointer bg-tabs--grey h-9 rounded-md;
+
+    @include r-plus {
+      @apply text-sm;
+    }
+  }
+  .dropdown-options {
+    @apply bg-tabs--grey border-t-2 border-light-blue rounded-bl-md rounded-br-md rounded-tl-none rounded-tr-none py-3.5 h-max px-4 -mt-[3px] hidden min-h-max;
+    .dropdown-item{
+      @apply text-xs font-normal py-[6px] cursor-pointer transition-all ease-in-out duration-300;
+      &:hover{
+        @apply text-accent--green;
+      }
+      @include r-plus{
+        @apply text-sm;
+      }
+    }
+    &.opened{
+      @apply block h-max max-h-max min-h-full absolute max-w-full z-[99] w-full;
+      @include r-plus{
+        @apply w-[195px]
+      }
+    }
+  }
+}

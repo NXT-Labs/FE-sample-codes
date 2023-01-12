@@ -1,0 +1,104 @@
+//PLAYERS OF THE WEEK
+.top-player {
+  @apply my-4 md:my-14;
+  .top-player--grid {
+    @apply grid grid-cols-3 py-14 md:grid-cols-1 md:gap-4 md:gap-y-24 sm:px-36 md:px-0 lg:px-12;
+    @include r-xsmall {
+      @apply grid-cols-1 gap-0 gap-y-20;
+    }
+    @include r-plus{
+      @apply grid-cols-3 gap-6;
+    }
+  }
+  .top-player--card {
+    @apply bg-secondary w-full rounded-[20px] text-center relative h-max pb-12;
+    .player--ranking {
+      @apply relative text-center w-max mx-auto mb-[40px] -mt-8;
+      .ranking-img {
+        @apply m-0 mx-auto border-[3px] rounded-[14px] flex;
+      }
+      .rank {
+        @apply absolute left-1/2 -translate-x-1/2 -translate-y-[55%] -bottom-[55%] w-[52px] h-[52px] rounded-full grid place-content-center text-secondary font-bold text-2xl leading-none align-baseline;
+      }
+    }
+    h4 {
+      @apply font-bold text-[32px] leading-none;
+    }
+    p{
+      @apply font-normal text-sm my-4;
+    }
+    .earned--credits {
+      @apply flex items-end justify-center leading-none text-accent--green text-sm gap-2;
+    }
+    button{
+      @apply absolute -bottom-5 left-1/2 -translate-x-1/2;
+    }
+    @include r-xsmall{
+      &:nth-child(1) {
+        .player--ranking{
+          .ranking-img{
+            @apply border-accent--gold;
+          }
+        }
+        .rank {
+          @apply bg-accent--gold;
+        }
+      }
+      &:nth-child(2) {
+        .player--ranking{
+          .ranking-img{
+            @apply border-[#898989];
+          }
+        }
+        .rank {
+          @apply bg-[#898989];
+        }
+      }
+      &:nth-child(3) {
+        .player--ranking{
+          img{
+            @apply border-[#C17343];
+          }
+        }
+        .rank {
+          @apply bg-[#C17343];
+        }
+      }
+    }
+    @include r-plus{
+      &:nth-child(odd){
+        @apply mt-16;
+      }
+      &:nth-child(1) {
+        .player--ranking{
+          .ranking-img{
+            @apply border-[#898989];
+          }
+        }
+        .rank {
+          @apply bg-[#898989];
+        }
+      }
+      &:nth-child(2) {
+        .player--ranking{
+          .ranking-img{
+            @apply border-accent--gold;
+          }
+        }
+        .rank {
+          @apply bg-accent--gold;
+        }
+      }
+      &:nth-child(3) {
+        .player--ranking{
+          .ranking-img{
+            @apply border-[#C17343];
+          }
+        }
+        .rank {
+          @apply bg-[#C17343];
+        }
+      }
+    }
+  }
+}

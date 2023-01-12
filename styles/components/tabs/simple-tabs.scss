@@ -1,0 +1,42 @@
+.simple-tabs{
+  @apply overflow-x-scroll rounded-lg left-auto -mt-6 sticky top-[90px] z-70;
+  @include r-medium{
+    @apply overflow-x-hidden relative top-0;
+  }
+}
+.simple-tabs-list{
+  @apply flex w-full;
+  .simple-tabs-item{
+    @apply bg-grey font-semibold text-sm py-4 px-6 cursor-pointer relative w-40 text-center;
+    
+    &:hover, &:active, &.active{
+      @apply bg-tabs--grey;
+      &::after{
+        content: '';
+        @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute;
+      }
+    }
+    &:first-child{
+      @apply rounded-tl-lg rounded-bl-lg;
+      &:hover, &:active{
+        &::after{
+          content: '';
+          @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute;
+        }
+      }
+    }
+    &:last-child{
+      @apply rounded-tr-lg rounded-br-lg;
+      &:hover, &:active{
+        &::after{
+          content: '';
+          @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute rounded-br-[16px];
+        }
+      }
+     
+    }
+  }
+  @include r-medium{
+    @apply w-max;
+  }
+}

@@ -1,0 +1,99 @@
+.tabs-container{
+  @apply bg-secondary rounded-[10px] py-8 px-0;
+
+  .tabs-content{
+    @apply px-4 flex flex-col items-start justify-between gap-4;
+    .left-col{
+      @apply order-2;
+      ul{
+        @apply mb-2;
+        li{
+          @apply flex items-center gap-[18px] mb-5 text-sm;
+          @include r-medium{
+            @apply text-base mb-2;
+          }
+          @include r-plus{
+            @apply text-lg mb-5;
+          }
+        }
+        @include r-medium{
+          @apply mb-20;
+        }
+      }
+      @include r-medium{
+        @apply order-1;
+      }
+    }
+    .right-col{
+      @apply order-1;
+      .tab-content-image span, .tab-content-image{
+        @apply w-full max-w-full;
+      }
+      @include r-laptop{
+        @apply order-2;
+      }
+    }
+
+     button{
+      @apply mx-auto;
+      @include r-medium{
+        @apply mx-0;
+      }
+     }
+    @include r-medium{
+      @apply flex-row gap-5 px-5;
+    }
+    @include r-between{
+      @apply px-16;
+    }
+  }
+}
+
+.tabs{
+  @apply flex sm:flex-row mx-0 bg-grey capitalize text-xs font-normal rounded-[10px] leading-7 h-[50px] mb-4;
+  flex: 0 1 auto;
+  button{
+    @apply w-full max-w-full text-light py-1 h-[50px] cursor-pointer relative;
+    &:hover{
+      @apply bg-dark--blue text-white font-bold h-[50px];
+      &::after{
+        content: '';
+        @apply absolute h-1 w-full bg-light--blue left-0 bottom-0;
+      }
+    }
+    &:first-child{
+      @apply rounded-tl-[10px] rounded-bl-[10px];
+      &:hover{
+        &::after{
+          content: '';
+          @apply absolute h-1 w-full bg-light--blue left-0 bottom-0 rounded-bl-[100px];
+        }
+      }
+    }
+    &:last-child{
+      @apply rounded-tr-[10px] rounded-br-[10px];
+      &:hover{
+        &::after{
+          content: '';
+          @apply absolute h-1 w-full bg-light--blue left-0 bottom-0 rounded-br-[100px];
+        }
+      }
+    }
+    @include r-medium{
+      @apply py-4 h-[60px];
+      &:hover{
+        @apply h-[60px];
+      }
+     }
+  }
+ @include r-medium{
+  @apply mx-auto text-lg h-[60px] w-11/12;
+ }
+}
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}

@@ -1,0 +1,52 @@
+.icon-tabs{
+  @apply overflow-x-scroll rounded-none left-auto -mt-6 sticky top-0 z-70;
+  @include r-medium{
+    @apply overflow-x-hidden relative top-0 rounded-lg;
+  }
+}
+.icon-tabs-list{
+  @apply flex w-full justify-center mx-auto;
+  .icon-tabs-item{
+    @apply flex justify-center gap-2 bg-grey font-semibold text-sm py-4 px-6 cursor-pointer relative w-[164px] text-center flex-grow;
+    .tab--icon, span{
+      min-width: 30px;
+    }
+    &:hover, &:active, &.active{
+      @apply bg-tabs--grey;
+      &::after{
+        content: '';
+        @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute;
+      }
+    }
+    &:first-child{
+      @apply rounded-none;
+      &:hover, &:active{
+        &::after{
+          content: '';
+          @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute;
+        }
+      }
+      @include r-medium{
+        @apply rounded-tl-lg rounded-bl-lg;
+      }
+    }
+    &:last-child{
+      @apply rounded-none;
+      &:hover, &:active{
+        &::after{
+          content: '';
+          @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute rounded-br-[16px];
+        }
+      }
+     @include r-medium{
+      @apply rounded-tr-lg rounded-br-lg;
+     }
+    }
+  }
+  @include r-medium{
+    @apply w-max;
+  }
+  @include r-plus{
+    @apply justify-start mx-0;
+  }
+}

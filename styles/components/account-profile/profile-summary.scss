@@ -1,0 +1,88 @@
+.profile-summary-pane {
+  @apply h-full flex flex-col justify-between bg-secondary min-h-max;
+  @include r-plus {
+    @apply w-[242px] min-h-screen;
+  }
+  @include r-laptop {
+    @apply w-[272px] min-h-screen;
+  }
+  @include r-extra-large{
+    @apply w-[352px];
+  }
+  button{
+    &.btn-bordered{
+      @apply flex items-center flex-row-reverse;
+    }
+  }
+}
+
+.member--info {
+  @apply bg-accent--blue text-center text-[11px] pt-6 pb-3 px-5  z-70 -mt-[60px];
+  .user-profile {
+    @apply relative w-max mx-auto z-70;
+    @include r-plus {
+      @apply -top-0;
+    }
+    button.edit-profile {
+      @apply absolute bg-light--blue rounded-full grid place-content-center w-[22px] h-[22px] right-0 bottom-1 transition-all ease-in-out duration-200;
+      &:hover {
+        @apply bg-orange;
+      }
+    }
+  }
+  h3 {
+    @apply text-[15px] font-semibold capitalize;
+  }
+  p {
+    @apply font-normal text-[#C7C7C7];
+  }
+  ul {
+    @apply flex justify-center items-center text-center gap-8 pt-3 mt-5 border-t border-slate-600;
+    li {
+      @apply flex gap-1 items-baseline leading-[0px] text-white;
+    }
+  }
+  @include r-plus{
+    @apply -mt-0;
+  }
+}
+
+.member--ranking {
+  @apply relative;
+  ul {
+    @apply flex justify-center items-center text-center gap-8 py-4 w-max mx-auto relative gap-10;
+  }
+  h4 {
+    @apply text-accent--green text-[15px] font-semibold;
+  }
+  p {
+    @apply text-[13px] font-medium;
+  }
+  &::after {
+    @apply w-[1px] h-14 bg-[#484848] absolute;
+    content: '';
+    position: absolute;
+    left: 48%;
+    transform: translateX(-48%);
+    bottom: 10%;
+  }
+  @include r-plus {
+    @apply bg-accent-grey;
+  }
+}
+
+.member--game-id {
+  @apply flex items-center justify-between py-3 px-4 rounded mb-4 mx-[18px] bg-accent--blue;
+  button {
+    @apply mt-0 min-w-[86px] h-9 py-2 flex items-center gap-2;
+  }
+  h4 {
+    @apply text-sm;
+  }
+}
+.member--points {
+  @apply bg-accent-grey mx-[18px] my-3 py-1 px-4 text-xs;
+  div {
+    @apply flex justify-between my-[10px];
+  }
+}

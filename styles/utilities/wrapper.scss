@@ -1,0 +1,11 @@
+@import './breakpoints.scss';
+.wrapper {
+  @apply px-[22px] mx-auto my-0 relative z-60 w-[98%] max-w-full;
+
+  @include r-plus {
+    @apply w-[92%] max-w-full;
+  }
+  @include r-desktop {
+    @apply w-[85%] max-w-full;
+  }
+}

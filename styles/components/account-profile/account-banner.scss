@@ -1,0 +1,36 @@
+.account-banner {
+  @apply relative;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .account-banner--image {
+    @apply w-full h-[110px];
+    background: url(https://cyber-battles-dev.s3.amazonaws.com/images/account-pages/profile-banner.jpg)
+      right 0 top 0 / cover no-repeat;
+    @include r-plus {
+      @apply h-[150px];
+    }
+    @include r-desktop-large{
+      @apply h-[180px];
+    }
+    @include r-extra-large{
+      @apply h-[230px];
+    }
+  }
+  button {
+    @apply mt-0 min-w-[86px] px-3 h-9 text-xs py-2 flex items-center gap-2 absolute bottom-5 right-2 z-40 flex items-center flex-row-reverse;
+    @include r-medium{
+      @apply text-xs right-3 bottom-8;
+    }
+    @include r-laptop{
+      @apply text-xs right-8 bottom-5;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.profile-menu{
+  @apply fixed z-[999] bg-secondary w-[260px] min-h-screen max-h-full h-full right-0 top-0 ml-auto pb-7 text-[13px] font-medium capitalize;
+  .current-user{
+    @apply flex items-center justify-start gap-4 px-3 py-[22px] bg-accent--blue capitalize;
+    .toggle-close{
+      @apply bg-secondary w-5 h-5 rounded-full;
+      &:hover{
+        @apply bg-light--blue;
+      }
+    }
+    p{
+      @apply text-light text-[10px] font-normal;
+    }
+    h3{
+      @apply text-[15px] font-semibold;
+    }
+  }
+  .credit-info{
+    @apply bg-accent-grey flex justify-center items-center text-center py-5 gap-[29px] capitalize relative;
+    h4{
+      @apply text-white text-[15px] font-semibold;
+    }
+    p{
+      @apply text-accent--green text-[13px] font-medium;
+    }
+    &::after{
+      content: '';
+      width: 1px;
+      height: 56px;
+      background-color: #4B4848;
+      position: absolute;
+      left: 54%;
+      transform: translateX(-54%);
+    }
+  }
+  ul{
+    @apply mt-3 mx-3 mb-1;
+    li{
+      @apply py-[10px] px-9 transition-all ease-in-out duration-300 cursor-pointer;
+      &:hover{
+        @apply bg-accent--blue rounded-md;
+      }
+    }
+    @include r-medium-laptop{
+      @apply mt-6;
+    }
+  }
+  button.signout {
+    @apply block w-full bg-transparent text-left py-3 px-9 absolute bottom-0 transition-all ease-in-out duration-300 pb-7;
+
+    // @apply block w-full bg-transparent text-left py-3 px-9 mt-[3.25rem] transition-all ease-in-out duration-300 pb-7;
+    &:hover{
+      @apply text-orange;
+    }
+    @include r-medium-laptop{
+      @apply mt-12;
+    }
+}
+}

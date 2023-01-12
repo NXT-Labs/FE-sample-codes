@@ -1,0 +1,87 @@
+
+// Featured Tournaments Section
+.featured-section {
+  @apply grid mb-5 mt-[29px];
+  @include r-xsmall {
+    @apply grid-cols-1 gap-0;
+  }
+  @include r-medium {
+    @apply grid-cols-1 gap-4 mx-20;
+  }
+  @include r-plus {
+    @apply grid-cols-2 gap-x-8 gap-y-2 mx-0;
+  }
+  @include r-laptop {
+    @apply grid-cols-3 gap-9;
+  }
+}
+// FEATURE TOURNAMENT CARD
+.featured-tournament {
+  @apply relative mx-auto my-5 max-w-full min-w-full;
+  .price--badge {
+    @apply absolute right-[8%] -top-[0.5px] text-lg text-center font-bold leading-3 z-70;
+    background: url(https://cyber-battles-dev.s3.amazonaws.com/images/generic/gold-badge.svg) left 0px top 0px /
+      cover no-repeat;
+    img {
+      @apply w-4;
+    }
+    span {
+      @apply text-2xl flex items-center justify-center mt-4 gap-1;
+    }
+    @include r-xsmall {
+      @apply w-[80px] h-[90px];
+    }
+    @include r-small {
+      @apply w-[98px] h-[105px];
+    }
+  }
+  // CONTENT INSIDE FEATURE TOURNAMENT CARD
+  .featured--content {
+    @apply text-sm text-light absolute -bottom-[1px] h-max w-full max-w-full px-4 py-3 rounded-[20px] rounded-tr-none rounded-tl-none;
+    background-color: rgb(4 7 13 / 94%);
+    ul {
+      @apply list-disc inline-flex gap-6;
+      mix-blend-mode: normal;
+      li {
+        @apply inline-block relative;
+      }
+    }
+    button {
+      @apply absolute right-0 bottom-[28px];
+      right: 5%;
+    }
+    .slots--info {
+      @apply border border-0 border-b border-light w-full;
+    }
+    .slots--info,
+    .time--info {
+      @apply mb-3 pb-1 mt-1;
+      li {
+        &:nth-child(2),
+        &:nth-child(3) {
+          &::before {
+            @include list-dot;
+          }
+        }
+      }
+    }
+    h3 {
+      @apply font-bold text-white;
+    }
+    @include r-xsmall {
+      @apply text-[11px];
+    }
+    @include r-small {
+      @apply text-sm;
+    }
+    @include r-extra-large {
+      @apply text-[18px];
+    }
+  }
+  img.tournament--image {
+    @apply w-full object-contain h-full max-h-full max-w-full;
+    @include r-xsmall {
+      @apply sm:w-full;
+    }
+  }
+}

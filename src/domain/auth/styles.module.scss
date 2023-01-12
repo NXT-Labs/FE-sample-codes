@@ -1,0 +1,17 @@
+.error_msg{
+  @apply bg-error;
+}
+.success_msg{
+  @apply bg-success;
+}
+.warning_msg{
+  @apply bg-warning;
+}
+.error_msg,
+.success_msg,
+.warning_msg{
+  @apply text-white text-xs font-medium rounded-[5px] p-[9px] flex justify-between items-center mt-8 fixed top-[4%] left-1/2 -translate-x-1/2 z-[9999];
+}
+.error-box{
+  @apply fixed top-[4%] left-1/2 -translate-x-1/2 z-[9999];
+}

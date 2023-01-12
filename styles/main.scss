@@ -1,0 +1,97 @@
+@import './vendors/tailwind.scss';
+@import './utilities/wrapper.scss';
+@import './utilities/fonts.scss';
+@import './utilities/breakpoints.scss';
+@import './utilities/button.scss';
+@import './utilities/reset.scss';
+@import './utilities/page-elements.scss';
+@import './utilities/page-layout.scss';
+
+// Header - navbar, mobile nav
+@import './components/header/navbar.scss';
+@import './components/header/mobile-menu.scss';
+@import './components/header/profile-menu.scss';
+
+// Form input
+@import './components/form-inputs/dropdowns.scss';
+@import './components/form-inputs/inputs.scss';
+
+// General
+@import './utilities/generic.scss';
+
+// Authentication pages - signIn signUp etc
+@import './components/auth-pages.scss';
+
+// Homepage specific styles
+@import './components/home/hero.scss';
+@import './components/home/featured-tournaments.scss';
+@import './components/home/game-logos.scss';
+@import './components/home/cta-box.scss';
+@import './components/home/players-of-week.scss';
+@import './components/home/latest-news.scss';
+@import './components/home/game-card.scss';
+@import './components/home/game-slider.scss';
+@import './components/home/community-tournament-card.scss';
+@import './components/home/tabs-box.scss';
+@import './components/home/match-finder.scss';
+// Slick slider
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
+// account settings
+@import './components/account-settings/settings-title.scss';
+@import './components/account-settings/settings-template.scss';
+@import './components/account-settings/settings-form.scss';
+
+// account profile
+@import './components/account-profile/account-template.scss';
+@import './components/account-profile/profile-summary.scss';
+@import './components/account-profile/account-banner.scss';
+@import './components/account-profile/account-tab-content.scss';
+
+// Tabs
+@import './components/tabs/simple-tabs.scss';
+@import './components/tabs/icon-tabs.scss';
+@import './components/tabs/simple-icon-tabs.scss';
+
+// Tables
+@import './utilities/table.scss';
+
+// Footer
+@import './components/footer.scss';
+
+// Shop
+@import './components/shop/shop.scss';
+@import './utilities/title.scss';
+
+// Cash Matches
+@import './components/cash-matches/cash-match.scss';
+@import './components/cash-matches/CashMatches.scss';
+@import './components/footer.scss';
+@import './components/header/navbar.scss';
+
+
+// PLAYER PROFILE
+@import './components/player-profile/player-info-box.scss';
+@import './components/player-profile/player-match-card.scss';
+@import './components/player-profile/player-profile-banner.scss';
+@import './components/player-profile/player-profile-template.scss';
+@import './components/player-profile/team-game-card.scss';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

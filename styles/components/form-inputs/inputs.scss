@@ -1,0 +1,55 @@
+input:focus, 
+input:focus-visible,
+select:focus-visible,
+select:focus {
+  outline: none;
+  @apply text-white
+}
+label {
+  @apply text-xs sm:text-sm block mb-2 capitalize mt-2;
+  @include r-medium{
+    @apply mt-6;
+  }
+}
+input {
+  @apply bg-grey text-regular px-3.5 py-3 font-normal max-w-full mb-2 w-full rounded text-sm text-placeholder;
+  border-radius: 3px;
+  &::placeholder {
+    @apply text-xs sm:text-sm capitalize;
+  }
+  &:active, &:focus, &:focus-visible{
+    @apply bg-transparent border border-[#484848];
+  }
+}
+
+input[type='date']::-webkit-inner-spin-button,
+input[type='date']::-webkit-calendar-picker-indicator {
+  @apply appearance-none box-border w-full max-w-full cursor-pointer absolute right-0 z-10;
+  opacity:0;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+select:invalid {
+  @apply text-placeholder;
+}
+
+option[value=''][disabled] {
+  @apply hidden;
+}
+
+select,
+input[type='date'] {
+  @apply relative z-20 text-regular px-3.5 py-3 font-normal w-full rounded mb-6 text-xs sm:text-sm text-placeholder cursor-pointer appearance-none box-border;
+  background: url(https://cyber-battles-dev.s3.amazonaws.com/images/generic/dropdown-icon.svg) right 4% top
+      50% / auto no-repeat,
+    #343a40;
+}

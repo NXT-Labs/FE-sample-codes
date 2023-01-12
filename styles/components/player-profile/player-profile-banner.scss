@@ -1,0 +1,9 @@
+.player-profile--banner{
+  @apply bg-[url('https://cyber-battles-dev.s3.amazonaws.com/images/player-profile/player-profile-banner.jpg')] bg-left-top bg-no-repeat bg-cover w-full h-[170px] ;
+  @include r-medium{
+    @apply h-[250px];
+  }
+  @include r-plus{
+    @apply h-[420px];
+  }
+}

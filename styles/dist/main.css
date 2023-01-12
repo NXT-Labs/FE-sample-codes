@@ -1,0 +1,2592 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.wrapper {
+  @apply px-[22px] mx-auto my-0 relative z-60 w-[98%] max-w-full;
+}
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    @apply w-[92%] max-w-full;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .wrapper {
+    @apply w-[85%] max-w-full;
+  }
+}
+
+.btn-solid {
+  @apply bg-light-blue border-light-blue text-white text-center text-sm block mx-auto w-max border rounded-[5px] py-1.5 sm:py-3 px-5 mt-6 transition-all ease-in-out duration-300;
+}
+.btn-solid:hover {
+  @apply bg-transparent border-light-blue;
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+}
+.btn-solid.wide {
+  @apply md:px-16;
+}
+@media only screen and (min-width: 568px) {
+  .btn-solid {
+    min-width: 159px;
+  }
+}
+
+.btn-bordered {
+  @apply bg-transparent border-light-blue text-white text-center text-sm block w-max border rounded-[5px] py-1.5 sm:py-3 px-5 mt-6 transition-all ease-in-out duration-300;
+}
+.btn-bordered:hover {
+  @apply bg-light-blue border-light-blue;
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+}
+.btn-bordered.wide {
+  @apply md:px-16;
+}
+@media only screen and (min-width: 568px) {
+  .btn-bordered {
+    min-width: 159px;
+  }
+}
+
+.view-btn {
+  @apply bg-grey text-light uppercase text-lg leading-7 text-center block w-full font-semibold;
+}
+.view-btn:hover {
+  @apply bg-light--blue text-white;
+}
+
+button.setting-button {
+  @apply w-[48px] h-[44px]  bg-accent--blue rounded-[4px] grid place-content-center transition-all ease-in-out duration-300;
+}
+button.setting-button:hover {
+  @apply bg-grey;
+}
+
+button#see-more {
+  @apply block text-light--blue text-xs font-semibold capitalize block;
+  margin: 15px auto 35px;
+}
+@media only screen and (min-width: 768px) {
+  button#see-more {
+    @apply hidden;
+  }
+}
+
+button#see-all {
+  @apply text-sm font-semibold uppercase flex flex-col-reverse justify-center items-center mx-auto my-6 transition-all ease-out duration-300;
+}
+button#see-all:hover {
+  @apply text-light--blue;
+}
+@media only screen and (min-width: 992px) {
+  button#see-all {
+    @apply hidden;
+  }
+}
+
+html {
+  @apply box-border h-full;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @apply bg-primary h-full;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.styled-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+.styled-checkbox + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+.styled-checkbox + label:before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 18px;
+  height: 18px;
+  @apply bg-grey rounded;
+}
+.styled-checkbox:hover + label:before {
+  @apply bg-grey;
+}
+.styled-checkbox:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+.styled-checkbox:checked + label:before {
+  @apply bg-grey;
+}
+.styled-checkbox:disabled + label {
+  color: #b8b8b8;
+  cursor: auto;
+}
+.styled-checkbox:disabled + label:before {
+  box-shadow: none;
+  background: #ddd;
+}
+.styled-checkbox:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  transform: rotate(45deg);
+}
+
+.checkbox--field input {
+  @apply w-4 h-4 rounded-md styled-checkbox;
+}
+
+.col-50-justify-between {
+  @apply flex justify-between flex-wrap;
+}
+.col-50-justify-between > div {
+  @apply w-full;
+}
+
+.col-50-grid-gap {
+  @apply grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 2rem;
+}
+
+.grid-1-3 {
+  @apply grid;
+  grid-row-gap: 2.5rem;
+}
+
+nav {
+  @apply w-full bg-secondary shadow relative z-70;
+}
+nav .nav-container {
+  @apply flex flex-row justify-start mx-auto flex items-center px-1 flex py-2 gap-5;
+}
+@media only screen and (min-width: 768px) {
+  nav .nav-container {
+    @apply px-4;
+  }
+}
+nav .nav-left-col {
+  @apply flex items-center justify-between py-3 py-0 flex gap-4 items-center flex;
+}
+nav .nav-right-col {
+  @apply flex-grow;
+}
+nav .navigation {
+  @apply flex flex-row items-center justify-end gap-4 pb-0 mt-0 relative min-h-fit h-auto w-full;
+}
+nav .navigation ul {
+  @apply flex flex-row items-center justify-center gap-5;
+}
+nav .navigation ul li {
+  @apply text-white mt-2 mb-2 text-sm;
+}
+nav .navigation ul li:hover {
+  @apply text-light--blue;
+}
+nav .navigation ul li button {
+  @apply hidden;
+}
+nav .navigation ul li button.user-profile {
+  @apply block p-0;
+}
+@media only screen and (min-width: 1024px) {
+  nav .navigation ul li button {
+    @apply block my-0 min-w-max px-3 py-2 capitalize;
+  }
+}
+nav .navigation ul li .dropdown-btn {
+  @apply flex justify-center items-center;
+}
+nav .navigation ul.account-links {
+  @apply gap-3;
+}
+nav .navigation ul.links-list {
+  @apply hidden;
+}
+@media only screen and (min-width: 1024px) {
+  nav .navigation ul.links-list {
+    @apply mr-auto border-r-0 flex;
+    border-right: 0.5px solid #495057;
+    margin-right: 18px !important;
+  }
+}
+nav .navigation .links {
+  @apply flex;
+}
+@media only screen and (min-width: 1024px) {
+  nav .navigation {
+    @apply justify-between gap-0;
+  }
+}
+nav ul.dropdown-menu {
+  @apply py-1 hidden absolute bg-secondary w-[192px] py-4 px-[18px] h-auto border-t-2 border-t-light--blue;
+  border-radius: 0 0 20px 20px;
+}
+nav ul.dropdown-menu li {
+  @apply mb-4;
+}
+
+.dropdown-btn.lang-selector {
+  @apply gap-2 px-0;
+}
+.dropdown-btn.lang-selector .flag {
+  @apply mr-3;
+}
+
+.guest, .member {
+  @apply flex items-center gap-4;
+}
+.guest.hidden, .member.hidden {
+  display: none;
+}
+
+.notification-bell {
+  @apply relative p-0;
+}
+.notification-bell .noti-dot {
+  @apply w-2 h-2 bg-orange rounded-full block absolute -top-2 right-[2px];
+}
+
+.profile-avatar {
+  @apply rounded-full object-scale-down h-[39px] w-[39px] cursor-pointer;
+}
+
+.search-box {
+  @apply hidden;
+}
+@media only screen and (min-width: 768px) {
+  .search-box {
+    @apply block relative z-10;
+  }
+  .search-box input.search--bar {
+    @apply rounded-[30px] min-w-[40px] bg-grey pl-10 mb-0;
+  }
+  .search-box .searchIcon {
+    @apply absolute top-[40%] -translate-y-[40%] left-3 z-40 cursor-pointer;
+  }
+}
+
+.search-button {
+  @apply block;
+}
+@media only screen and (min-width: 768px) {
+  .search-button {
+    @apply hidden;
+  }
+}
+
+.toggler {
+  @apply block;
+}
+@media only screen and (min-width: 1024px) {
+  .toggler {
+    @apply hidden;
+  }
+}
+
+.mobile-menu {
+  @apply fixed z-70 bg-secondary w-[295px] min-h-screen h-full left-0 top-0 mr-auto pb-7 text-[13px] font-medium capitalize pt-12 px-3 pb-40;
+}
+.mobile-menu .mobile-menu-list {
+  @apply mt-9;
+}
+.mobile-menu .mobile-menu-list li {
+  @apply text-sm font-medium mb-2 px-8 py-[14px];
+}
+.mobile-menu .mobile-menu-list li:hover {
+  @apply bg-accent--blue rounded-md;
+}
+
+.account-buttons {
+  @apply flex items-center justify-center gap-5 absolute bottom-0 mb-12;
+}
+.account-buttons button {
+  @apply min-w-[120px] text-xs capitalize;
+}
+
+.profile-menu {
+  @apply fixed z-70 bg-secondary w-[260px] min-h-screen h-full right-0 top-0 ml-auto pb-7 text-[13px] font-medium capitalize;
+}
+.profile-menu .current-user {
+  @apply flex items-center justify-start gap-4 px-3 py-[22px] bg-accent--blue capitalize;
+}
+.profile-menu .current-user .toggle-close {
+  @apply bg-secondary w-5 h-5 rounded-full;
+}
+.profile-menu .current-user .toggle-close:hover {
+  @apply bg-light--blue;
+}
+.profile-menu .current-user p {
+  @apply text-light text-[10px] font-normal;
+}
+.profile-menu .current-user h3 {
+  @apply text-[15px] font-semibold;
+}
+.profile-menu .credit-info {
+  @apply bg-accent-grey flex justify-center items-center text-center py-5 gap-[29px] capitalize relative;
+}
+.profile-menu .credit-info h4 {
+  @apply text-white text-[15px] font-semibold;
+}
+.profile-menu .credit-info p {
+  @apply text-accent--green text-[13px] font-medium;
+}
+.profile-menu .credit-info::after {
+  content: "";
+  width: 1px;
+  height: 56px;
+  background-color: #4B4848;
+  position: absolute;
+  left: 54%;
+  transform: translateX(-54%);
+}
+.profile-menu ul {
+  @apply mt-6 mx-3 mb-20;
+}
+.profile-menu ul li {
+  @apply py-3 px-9 transition-all ease-in-out duration-300 cursor-pointer;
+}
+.profile-menu ul li:hover {
+  @apply bg-accent--blue rounded-md;
+}
+.profile-menu button.signout {
+  @apply block w-full bg-transparent text-left py-3 px-12 absolute bottom-0 transition-all ease-in-out duration-300 pb-7;
+}
+.profile-menu button.signout:hover {
+  @apply text-orange;
+}
+
+.dropdown-filters {
+  @apply grid gap-5 my-4;
+}
+.dropdown-filters select {
+  @apply p-4 bg-tabs--grey rounded-md text-white appearance-none text-sm min-w-[195px];
+}
+@media only screen and (min-width: 319px) {
+  .dropdown-filters select {
+    @apply min-w-[135px] mb-1 h-[36px] py-0 mx-auto;
+  }
+}
+@media only screen and (min-width: 375px) {
+  .dropdown-filters select {
+    @apply w-full max-w-full;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .dropdown-filters select {
+    @apply ml-0;
+  }
+}
+@media only screen and (min-width: 319px) {
+  .dropdown-filters {
+    @apply gap-3;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .dropdown-filters {
+    @apply gap-3;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .dropdown-filters {
+    @apply gap-3;
+    grid-template-columns: repeat(3, 195px);
+  }
+}
+
+input:focus,
+input:focus-visible,
+select:focus-visible,
+select:focus {
+  outline: none;
+  @apply text-white;
+}
+
+label {
+  @apply text-xs sm:text-sm block mb-2 capitalize mt-2;
+}
+@media only screen and (min-width: 568px) {
+  label {
+    @apply mt-6;
+  }
+}
+
+input {
+  @apply bg-grey text-regular px-3.5 py-3 font-normal max-w-full mb-2 w-full rounded text-sm text-placeholder;
+  border-radius: 3px;
+}
+input::placeholder {
+  @apply text-xs sm:text-sm capitalize;
+}
+input:active, input:focus, input:focus-visible {
+  @apply bg-transparent border border-[#484848];
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-calendar-picker-indicator {
+  @apply appearance-none box-border w-full max-w-full cursor-pointer absolute right-0 z-10;
+  opacity: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+select:invalid {
+  @apply text-placeholder;
+}
+
+option[value=""][disabled] {
+  @apply hidden;
+}
+
+select,
+input[type=date] {
+  @apply relative z-20 text-regular px-3.5 py-3 font-normal w-full rounded mb-6 text-xs sm:text-sm text-placeholder cursor-pointer appearance-none box-border;
+  background: url(https://cyber-battles-dev.s3.amazonaws.com/images/generic/dropdown-icon.svg) right 4% top 50%/auto no-repeat, #343a40;
+}
+
+html {
+  @apply box-border overflow-x-hidden;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  @apply bg-primary font-poppins m-0 text-white;
+}
+
+.blue--link,
+.blue--link--underlined {
+  @apply text-light-blue underline transition-all duration-300 ease-in-out hover:text-light hover:no-underline;
+}
+
+.blue--link--underlined {
+  @apply no-underline;
+}
+
+.featured-heading {
+  @apply font-bold w-max relative pr-6 flex items-center gap-4 mx-auto md:ml-0 md:mr-auto;
+}
+.featured-heading.alt {
+  @apply pr-0;
+}
+.featured-heading::after {
+  @apply absolute left-0 -bottom-[10px] w-full h-1 bg-blue-700;
+  content: "";
+}
+@media only screen and (min-width: 319px) {
+  .featured-heading {
+    @apply text-[15px];
+  }
+}
+@media only screen and (min-width: 375px) {
+  .featured-heading {
+    @apply text-lg;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .featured-heading {
+    @apply text-[32px];
+  }
+}
+
+.green-link {
+  @apply text-accent--green capitalize flex items-center gap-1 transition-all ease-in-out duration-300;
+}
+.green-link img {
+  @apply w-4;
+}
+.green-link:hover {
+  @apply text-white;
+}
+.green-link:hover img {
+  @apply brightness-0 invert;
+}
+@media only screen and (min-width: 319px) {
+  .green-link {
+    @apply text-[11px];
+  }
+}
+@media only screen and (min-width: 375px) {
+  .green-link {
+    @apply text-sm;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .green-link {
+    @apply text-[18px];
+  }
+}
+
+.sub-title {
+  @apply my-4 text-xs sm:text-base md:text-lg text-center md:text-left font-normal;
+}
+
+.custom-img {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.home-section {
+  @apply py-16;
+}
+
+.ellipses {
+  @apply relative w-full h-full overflow-x-hidden;
+}
+.ellipses::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+@media only screen and (min-width: 319px) {
+  .ellipses::after {
+    background: url("https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-right-sm.svg") right 0px top 0px/contain no-repeat, url("https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-left-sm.svg") left 0px bottom 91%/auto no-repeat;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .ellipses::after {
+    content: "";
+    background: url("https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-right.svg") right 0px top 0px/auto no-repeat, url("https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-left.svg") left 0px top 25%/auto no-repeat, url("https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-right-sm.svg") right 0px top 70%/auto no-repeat, url("https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-glow-left-sm.svg") left 0px bottom 8%/auto no-repeat;
+  }
+}
+
+.dropdown-filters-buttons {
+  @apply grid gap-3 items-center;
+  grid-template-columns: repeat(1, 172px) 100px;
+}
+.dropdown-filters-buttons select {
+  @apply m-0 text-xs text-white font-medium capitalize;
+}
+.dropdown-filters-buttons button {
+  @apply text-sm capitalize min-w-max px-4 py-2;
+}
+@media only screen and (min-width: 568px) {
+  .dropdown-filters-buttons {
+    grid-template-columns: repeat(2, 166px) 100px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .dropdown-filters-buttons {
+    grid-template-columns: repeat(3, 172px) 100px;
+  }
+}
+
+.error_msg {
+  @apply bg-error;
+}
+
+.success_msg {
+  @apply bg-success;
+}
+
+.warning_msg {
+  @apply bg-warning;
+}
+
+.error_msg,
+.success_msg,
+.warning_msg {
+  @apply text-white text-xs font-medium rounded-[5px] p-[9px] flex justify-between items-center mt-8 fixed top-[4%] left-1/2 -translate-x-1/2 z-[9999];
+}
+
+.error-box {
+  @apply fixed top-[4%] left-1/2 -translate-x-1/2 z-[9999];
+}
+
+.page-loader {
+  @apply w-full h-full fixed top-0 left-0 flex items-center justify-center z-[999999];
+  background-color: rgba(9, 18, 37, 0.91);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+}
+
+.auth-template {
+  @apply grid gap-0 md:gap-0;
+  background: url(https://cyber-battles-dev.s3.amazonaws.com/images/generic/blue-ellipse.png) right 0px top 0px/contain no-repeat;
+  grid-template-rows: 200px 1fr;
+}
+@media only screen and (min-width: 992px) {
+  .auth-template {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.auth-template .main--heading {
+  @apply mb-2 text-center font-bold;
+  font-size: calc(24px + (48 - 24) * ((100vw - 300px) / (1920 - 300)));
+  line-height: 1.2;
+}
+.auth-template .checkbox--field {
+  @apply text-sm flex items-center gap-2;
+}
+.auth-template .checkbox--field input,
+.auth-template .checkbox--field label {
+  @apply inline-block w-auto mb-0 align-middle;
+}
+.auth-template .banner {
+  @apply relative w-full max-w-full;
+  min-height: 200px;
+  background: url("https://cyber-battles-dev.s3.amazonaws.com/images/authentication-pages/signup-banner.png") left 0px top 0px/cover no-repeat;
+}
+.auth-template .banner.login {
+  background: url("https://cyber-battles-dev.s3.amazonaws.com/images/authentication-pages/sign-in-banner.webp") left 0px top 0px/cover no-repeat;
+}
+@media only screen and (min-width: 568px) {
+  .auth-template .banner {
+    @apply h-full;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .auth-template .banner {
+    @apply h-full min-h-screen;
+  }
+}
+.auth-template .logo {
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50;
+}
+.auth-template .auth-right {
+  @apply py-6 px-4 sm:px-10 md:px-20 lg:px-16 lg:py-16 xl:py-20 xl:px-24 flex flex-col justify-center items-center;
+}
+.auth-template .auth-right p {
+  @apply text-center;
+}
+.auth-template .auth-right p a {
+  @apply ml-1;
+}
+.auth-template .auth-right form {
+  @apply w-full;
+}
+.auth-template .auth-left {
+  @apply relative;
+}
+.auth-template .auth-left::before {
+  content: "";
+  @apply bg-primary max-w-full max-h-full absolute top-0 left-0 w-full min-w-full min-h-full h-full block opacity-60 z-30;
+}
+.auth-template .recovery--form {
+  @apply mt-6 mb-12;
+}
+.auth-template .otp {
+  @apply grid grid-cols-4 gap-8 mt-7 justify-items-center place-content-center;
+  grid-template-columns: 50px 50px 50px 50px;
+}
+.auth-template .otp input {
+  @apply w-12 h-12 rounded text-xl p-2 text-center;
+}
+.auth-template .otp input:focus,
+.auth-template .otp input:focus-visible,
+.auth-template .otp select:focus-visible,
+.auth-template .otp select:focus {
+  @apply text-white outline outline-light-blue;
+}
+.auth-template .emailSentTo {
+  @apply font-semibold lowercase;
+}
+
+.hero-section {
+  @apply text-center py-11 lg:py-16;
+  background: url(https://cyber-battles-dev.s3.amazonaws.com/images/homepage/home-banner.png) left 0px top 0px/cover no-repeat;
+}
+.hero-section .hero--content {
+  @apply relative z-20;
+}
+.hero-section h1,
+.hero-section h2 {
+  @apply font-bold leading-normal;
+  line-height: 1.2;
+}
+.hero-section h1 {
+  font-size: calc(24px + (50 - 24) * ((100vw - 375px) / (1920 - 375)));
+}
+.hero-section h2 {
+  font-size: calc(24px + (60 - 24) * ((100vw - 375px) / (1920 - 375)));
+}
+.hero-section p {
+  @apply px-12;
+  font-size: calc(12px + (20 - 12) * ((100vw - 375px) / (1920 - 375)));
+}
+.hero-section button {
+  @apply mt-4;
+}
+.hero-section .highlighted--features {
+  @apply grid grid-cols-3 gap-4 sm:gap-10 md:gap-20 mt-12 justify-items-center place-content-center w-fit mx-auto;
+}
+.hero-section .highlighted--features .icon-box {
+  @apply flex justify-between gap-3 flex-col items-center;
+}
+.hero-section .highlighted--features img {
+  @apply mx-auto;
+}
+.hero-section .highlighted--features span {
+  @apply text-xs md:text-lg font-semibold;
+}
+
+.featured-section {
+  @apply grid mb-5 mt-[29px];
+}
+@media only screen and (min-width: 319px) {
+  .featured-section {
+    @apply grid-cols-1 gap-0;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .featured-section {
+    @apply grid-cols-1 gap-4 mx-20;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .featured-section {
+    @apply grid-cols-2 gap-x-8 gap-y-2 mx-0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .featured-section {
+    @apply grid-cols-3 gap-9;
+  }
+}
+
+.featured-tournament {
+  @apply relative mx-auto my-5 max-w-full min-w-full;
+}
+.featured-tournament .price--badge {
+  @apply absolute right-[8%] -top-[0.5px] text-lg text-center font-bold leading-3 z-70;
+  background: url(https://cyber-battles-dev.s3.amazonaws.com/images/generic/gold-badge.svg) left 0px top 0px/cover no-repeat;
+}
+.featured-tournament .price--badge img {
+  @apply w-4;
+}
+.featured-tournament .price--badge span {
+  @apply text-2xl flex items-center justify-center mt-4 gap-1;
+}
+@media only screen and (min-width: 319px) {
+  .featured-tournament .price--badge {
+    @apply w-[80px] h-[90px];
+  }
+}
+@media only screen and (min-width: 375px) {
+  .featured-tournament .price--badge {
+    @apply w-[98px] h-[105px];
+  }
+}
+.featured-tournament .featured--content {
+  @apply text-sm text-light absolute -bottom-[1px] h-max w-full max-w-full px-4 py-3 rounded-[20px] rounded-tr-none rounded-tl-none;
+  background-color: rgba(4, 7, 13, 0.94);
+}
+.featured-tournament .featured--content ul {
+  @apply list-disc inline-flex gap-6;
+  mix-blend-mode: normal;
+}
+.featured-tournament .featured--content ul li {
+  @apply inline-block relative;
+}
+.featured-tournament .featured--content button {
+  @apply absolute right-0 bottom-[28px];
+  right: 5%;
+}
+.featured-tournament .featured--content .slots--info {
+  @apply border border-0 border-b border-light w-full;
+}
+.featured-tournament .featured--content .slots--info,
+.featured-tournament .featured--content .time--info {
+  @apply mb-3 pb-1 mt-1;
+}
+.featured-tournament .featured--content .slots--info li:nth-child(2)::before, .featured-tournament .featured--content .slots--info li:nth-child(3)::before,
+.featured-tournament .featured--content .time--info li:nth-child(2)::before,
+.featured-tournament .featured--content .time--info li:nth-child(3)::before {
+  @apply absolute bg-light rounded-full;
+  content: "";
+  left: -14px;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.featured-tournament .featured--content h3 {
+  @apply font-bold text-white;
+}
+@media only screen and (min-width: 319px) {
+  .featured-tournament .featured--content {
+    @apply text-[11px];
+  }
+}
+@media only screen and (min-width: 375px) {
+  .featured-tournament .featured--content {
+    @apply text-sm;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .featured-tournament .featured--content {
+    @apply text-[18px];
+  }
+}
+.featured-tournament img.tournament--image {
+  @apply w-full object-contain h-full max-h-full max-w-full;
+}
+@media only screen and (min-width: 319px) {
+  .featured-tournament img.tournament--image {
+    @apply sm:w-full;
+  }
+}
+
+.game-logos {
+  @apply grid items-center justify-center mt-[70px] pb-[70px];
+}
+.game-logos img {
+  @apply mx-auto;
+}
+@media only screen and (min-width: 319px) {
+  .game-logos {
+    @apply grid-cols-2 gap-10 gap-y-8;
+  }
+}
+@media only screen and (min-width: 375px) {
+  .game-logos {
+    @apply grid-cols-3 gap-4;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .game-logos {
+    @apply grid-cols-5 gap-8;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .game-logos {
+    @apply gap-20;
+  }
+}
+
+.cta-box {
+  @apply bg-secondary rounded-[10px] py-6 px-4 lg:py-10 lg:px-[52px] text-center flex flex-col gap-6;
+}
+.cta-box .feature-counters {
+  @apply flex items-center justify-evenly gap-6;
+}
+.cta-box .feature-counters .counters {
+  @apply uppercase text-light--blue text-2xl lg:text-[42px] font-bold;
+}
+.cta-box .feature-counters .counters p {
+  @apply text-white text-xs lg:text-lg font-medium lg:leading-loose;
+}
+.cta-box hr {
+  @apply mx-2 border-light md:hidden;
+}
+.cta-box .content h3 {
+  @apply font-bold text-[21px] lg:text-4xl leading-tight mb-4 md:text-left;
+}
+.cta-box .content p {
+  @apply text-xs lg:text-lg leading-snug md:text-left;
+}
+.cta-box .content button {
+  @apply px-7 mx-auto md:mx-0;
+}
+@media only screen and (min-width: 768px) {
+  .cta-box {
+    @apply flex-row justify-between;
+  }
+  .cta-box .feature-counters {
+    @apply order-2 flex-col w-1/4;
+  }
+  .cta-box .content {
+    @apply w-1/2 pl-4;
+  }
+}
+
+.top-player {
+  @apply my-4 md:my-14;
+}
+.top-player .top-player--grid {
+  @apply grid grid-cols-3 py-14 md:grid-cols-1 md:gap-4 md:gap-y-24 sm:px-36 md:px-0 lg:px-12;
+}
+@media only screen and (min-width: 319px) {
+  .top-player .top-player--grid {
+    @apply grid-cols-1 gap-0 gap-y-20;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .top-player .top-player--grid {
+    @apply grid-cols-3 gap-6;
+  }
+}
+.top-player .top-player--card {
+  @apply bg-secondary w-full rounded-[20px] text-center relative h-max pb-12;
+}
+.top-player .top-player--card .player--ranking {
+  @apply relative text-center w-max mx-auto mb-[40px] -mt-8;
+}
+.top-player .top-player--card .player--ranking .ranking-img {
+  @apply m-0 mx-auto border-[3px] rounded-[14px] flex;
+}
+.top-player .top-player--card .player--ranking .rank {
+  @apply absolute left-1/2 -translate-x-1/2 -translate-y-[55%] -bottom-[55%] w-[52px] h-[52px] rounded-full grid place-content-center text-secondary font-bold text-2xl leading-none align-baseline;
+}
+.top-player .top-player--card h4 {
+  @apply font-bold text-[32px] leading-none;
+}
+.top-player .top-player--card p {
+  @apply font-normal text-sm my-4;
+}
+.top-player .top-player--card .earned--credits {
+  @apply flex items-end justify-center leading-none text-accent--green text-sm gap-2;
+}
+.top-player .top-player--card button {
+  @apply absolute -bottom-5 left-1/2 -translate-x-1/2;
+}
+@media only screen and (min-width: 319px) {
+  .top-player .top-player--card:nth-child(1) .player--ranking .ranking-img {
+    @apply border-accent--gold;
+  }
+  .top-player .top-player--card:nth-child(1) .rank {
+    @apply bg-accent--gold;
+  }
+  .top-player .top-player--card:nth-child(2) .player--ranking .ranking-img {
+    @apply border-[#898989];
+  }
+  .top-player .top-player--card:nth-child(2) .rank {
+    @apply bg-[#898989];
+  }
+  .top-player .top-player--card:nth-child(3) .player--ranking img {
+    @apply border-[#C17343];
+  }
+  .top-player .top-player--card:nth-child(3) .rank {
+    @apply bg-[#C17343];
+  }
+}
+@media only screen and (min-width: 768px) {
+  .top-player .top-player--card:nth-child(odd) {
+    @apply mt-16;
+  }
+  .top-player .top-player--card:nth-child(1) .player--ranking .ranking-img {
+    @apply border-[#898989];
+  }
+  .top-player .top-player--card:nth-child(1) .rank {
+    @apply bg-[#898989];
+  }
+  .top-player .top-player--card:nth-child(2) .player--ranking .ranking-img {
+    @apply border-accent--gold;
+  }
+  .top-player .top-player--card:nth-child(2) .rank {
+    @apply bg-accent--gold;
+  }
+  .top-player .top-player--card:nth-child(3) .player--ranking .ranking-img {
+    @apply border-[#C17343];
+  }
+  .top-player .top-player--card:nth-child(3) .rank {
+    @apply bg-[#C17343];
+  }
+}
+
+.latest-news {
+  @apply grid w-full my-[50px] gap-7;
+}
+.latest-news .news--box {
+  @apply w-full block relative rounded-[20px] overflow-hidden;
+}
+.latest-news .news--box img {
+  @apply w-full;
+}
+.latest-news .news--excerpt {
+  @apply w-full absolute left-0 bottom-0 pb-6 py-[17px] px-[19px] rounded-[20px] rounded-tr-none rounded-tl-none font-normal;
+  background-color: rgba(6, 6, 6, 0.95);
+}
+.latest-news .news--excerpt .news--meta {
+  @apply flex justify-between items-start font-bold mb-4;
+}
+.latest-news .news--excerpt .news--meta span {
+  @apply font-medium text-[#92908F] whitespace-nowrap;
+}
+@media only screen and (min-width: 568px) {
+  .latest-news .news--excerpt .news--meta {
+    @apply text-xs leading-tight;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .latest-news .news--excerpt .news--meta {
+    @apply text-sm;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .latest-news .news--excerpt {
+    @apply text-[11px];
+  }
+}
+@media only screen and (min-width: 768px) {
+  .latest-news .news--excerpt {
+    @apply text-sm;
+  }
+}
+@media only screen and (min-width: 319px) {
+  .latest-news {
+    @apply grid-cols-1;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .latest-news {
+    @apply grid-cols-2;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .latest-news {
+    @apply grid-cols-3;
+  }
+}
+
+.game-card {
+  @apply relative transition-all ease-in-out delay-300 block text-center max-w-[250px]  cursor-pointer;
+}
+.game-card .game--title {
+  @apply absolute bottom-0 bg-dark--blue text-sm text-white uppercase w-full max-w-full block p-3 rounded-br-[20px] rounded-bl-[20px];
+}
+.game-card:hover {
+  @apply -translate-y-10;
+}
+.game-card:hover .game--title {
+  @apply bg-light--blue;
+}
+
+.slider-card {
+  @apply max-w-[230px] min-w-[230px];
+  padding: 38px 0;
+}
+
+.game-slider-section .game-slider {
+  @apply my-4;
+}
+.game-slider-section .game-slider .slick-prev {
+  left: -2%;
+  z-index: 999;
+}
+.game-slider-section .game-slider .slick-prev::before {
+  content: url(https://cyber-battles-dev.s3.amazonaws.com/images/homepage/slider-left-arrow.svg) !important;
+}
+@media only screen and (min-width: 768px) {
+  .game-slider-section .game-slider .slick-prev {
+    left: -6%;
+  }
+}
+.game-slider-section .game-slider .slick-next {
+  right: -2%;
+  z-index: 999;
+}
+.game-slider-section .game-slider .slick-next::before {
+  content: url(https://cyber-battles-dev.s3.amazonaws.com/images/homepage/slider-right-arrow.svg) !important;
+}
+@media only screen and (min-width: 768px) {
+  .game-slider-section .game-slider .slick-next {
+    right: -6%;
+  }
+}
+
+.slick-dots li button::before {
+  @apply text-white opacity-100 text-[10px];
+}
+.slick-dots li.slick-active button::before {
+  @apply text-light--blue opacity-100;
+}
+
+.slick-slide {
+  @apply text-center;
+}
+
+.tournaments {
+  @apply grid items-center gap-y-14 gap-x-6 mb-12 mt-5;
+}
+@media only screen and (min-width: 319px) {
+  .tournaments {
+    @apply grid-cols-1;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .tournaments {
+    @apply grid-cols-2;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .tournaments {
+    @apply grid-cols-3;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .tournaments {
+    @apply gap-x-9;
+  }
+}
+
+.tournament-card {
+  @apply bg-secondary max-w-[330px] w-full rounded-[20px] px-[22px] pb-20 relative mt-11 transition-all ease-out duration-500 cursor-pointer mx-auto;
+}
+.tournament-card .tournament-image {
+  @apply relative -top-11 w-max h-[129px] rounded-[10px];
+  border: 1px solid #6C757D;
+}
+.tournament-card .price-badge {
+  @apply bg-grey h-[85px] text-light text-sm text-center absolute z-70 text-center text-lg font-bold leading-3 transition-all ease-out duration-500;
+  right: 8%;
+  top: -0.5px;
+}
+.tournament-card .price-badge h4 {
+  @apply mt-[10px] flex items-center justify-center gap-1 text-2xl leading-20;
+}
+@media only screen and (min-width: 319px) {
+  .tournament-card .price-badge {
+    @apply w-[78px];
+  }
+}
+@media only screen and (min-width: 375px) {
+  .tournament-card .price-badge {
+    @apply w-[98px];
+  }
+}
+.tournament-card h4 {
+  @apply font-normal uppercase;
+}
+.tournament-card p {
+  @apply font-bold leading-6;
+}
+.tournament-card .details {
+  @apply -mt-6 mb-4;
+}
+.tournament-card .details h3 {
+  @apply text-lg font-bold leading-7;
+}
+.tournament-card .details p {
+  @apply text-sm leading-5 font-normal;
+}
+.tournament-card .starts-in {
+  @apply text-orange;
+}
+.tournament-card .team-info {
+  @apply grid grid-cols-3 gap-7 mb-4;
+}
+.tournament-card .badge-triangle {
+  @apply w-0 h-0 absolute -bottom-[1px] left-1/2 -translate-x-1/2 opacity-100 z-[99999];
+  border-left: 48px solid transparent;
+  border-right: 48px solid transparent;
+  border-bottom: 20px solid #212529;
+}
+.tournament-card button {
+  @apply absolute left-0 bottom-0 rounded-bl-[20px] rounded-br-[20px] py-4 transition-all ease-out duration-500;
+}
+.tournament-card:hover .price-badge {
+  @apply bg-[#D38D03] text-white;
+}
+.tournament-card:hover button {
+  @apply bg-light-blue text-white;
+}
+@media only screen and (min-width: 319px) {
+  .tournament-card h4, .tournament-card p {
+    @apply text-xs;
+  }
+}
+@media only screen and (min-width: 375px) {
+  .tournament-card h4, .tournament-card p {
+    @apply text-sm;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .tournament-card {
+    @apply max-w-full;
+  }
+}
+
+.tabs-container {
+  @apply bg-secondary rounded-[10px] py-8 px-0;
+}
+.tabs-container .tabs-content {
+  @apply px-4 flex flex-col items-start justify-between gap-4;
+}
+.tabs-container .tabs-content .left-col {
+  @apply order-2;
+}
+.tabs-container .tabs-content .left-col ul {
+  @apply mb-2;
+}
+.tabs-container .tabs-content .left-col ul li {
+  @apply flex items-center gap-[18px] mb-5 text-sm;
+}
+@media only screen and (min-width: 568px) {
+  .tabs-container .tabs-content .left-col ul li {
+    @apply text-base mb-2;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .tabs-container .tabs-content .left-col ul li {
+    @apply text-lg mb-5;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .tabs-container .tabs-content .left-col ul {
+    @apply mb-20;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .tabs-container .tabs-content .left-col {
+    @apply order-1;
+  }
+}
+.tabs-container .tabs-content .right-col {
+  @apply order-1;
+}
+.tabs-container .tabs-content .right-col .tab-content-image span, .tabs-container .tabs-content .right-col .tab-content-image {
+  @apply w-full max-w-full;
+}
+@media only screen and (min-width: 992px) {
+  .tabs-container .tabs-content .right-col {
+    @apply order-2;
+  }
+}
+.tabs-container .tabs-content button {
+  @apply mx-auto;
+}
+@media only screen and (min-width: 568px) {
+  .tabs-container .tabs-content button {
+    @apply mx-0;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .tabs-container .tabs-content {
+    @apply flex-row gap-5 px-5;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .tabs-container .tabs-content {
+    @apply px-16;
+  }
+}
+
+.tabs {
+  @apply flex sm:flex-row mx-0 bg-grey capitalize text-xs font-normal rounded-[10px] leading-7 h-[50px] mb-4;
+  flex: 0 1 auto;
+}
+.tabs button {
+  @apply w-full max-w-full text-light py-1 h-[50px] cursor-pointer relative;
+}
+.tabs button:hover {
+  @apply bg-dark--blue text-white font-bold h-[50px];
+}
+.tabs button:hover::after {
+  content: "";
+  @apply absolute h-1 w-full bg-light--blue left-0 bottom-0;
+}
+.tabs button:first-child {
+  @apply rounded-tl-[10px] rounded-bl-[10px];
+}
+.tabs button:first-child:hover::after {
+  content: "";
+  @apply absolute h-1 w-full bg-light--blue left-0 bottom-0 rounded-bl-[100px];
+}
+.tabs button:last-child {
+  @apply rounded-tr-[10px] rounded-br-[10px];
+}
+.tabs button:last-child:hover::after {
+  content: "";
+  @apply absolute h-1 w-full bg-light--blue left-0 bottom-0 rounded-br-[100px];
+}
+@media only screen and (min-width: 568px) {
+  .tabs button {
+    @apply py-4 h-[60px];
+  }
+  .tabs button:hover {
+    @apply h-[60px];
+  }
+}
+@media only screen and (min-width: 568px) {
+  .tabs {
+    @apply mx-auto text-lg h-[60px] w-11/12;
+  }
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.matchfiner-filters {
+  @apply flex justify-between items-center flex-row;
+}
+@media only screen and (min-width: 319px) {
+  .matchfiner-filters {
+    @apply flex-col;
+  }
+  .matchfiner-filters .dropdown-filters {
+    grid-template-columns: repeat(2, 135px);
+    gap: 25px;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .matchfiner-filters {
+    @apply flex-row;
+  }
+  .matchfiner-filters .dropdown-filters {
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+  }
+}
+
+.swipe-indicator {
+  @apply flex items-center justify-center gap-1 font-normal text-xs text-center;
+  color: #8C8C8C;
+}
+@media only screen and (min-width: 319px) {
+  .swipe-indicator {
+    @apply flex;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .swipe-indicator {
+    @apply hidden;
+  }
+}
+
+.page-title {
+  @apply h-[120px] flex items-center justify-start font-bold text-[26px] px-[30px] sticky top-0 z-30;
+  background: linear-gradient(180deg, #091225 0%, #092F5E 100%);
+}
+@media only screen and (min-width: 568px) {
+  .page-title {
+    @apply relative;
+  }
+}
+
+.account-setting-template {
+  @apply px-4 pb-[43px] pt-0 relative;
+}
+.account-setting-template .filters-row {
+  @apply flex items-center;
+}
+.account-setting-template .filters-row select {
+  @apply max-w-[192px] mt-[43px] -mb-5;
+}
+@media only screen and (min-width: 568px) {
+  .account-setting-template .filters-row {
+    @apply justify-end;
+  }
+}
+.account-setting-template .setting-title {
+  @apply w-full block text-sm font-bold relative z-20 mt-[43px];
+}
+.account-setting-template .setting-title h3 {
+  @apply w-max bg-primary  relative z-20 pr-5;
+}
+.account-setting-template .setting-title:after {
+  @apply absolute w-full h-[1px] bg-grey top-1/2 z-10;
+  content: "";
+}
+@media only screen and (min-width: 568px) {
+  .account-setting-template {
+    @apply px-8;
+  }
+}
+
+.settings-form .form-row {
+  @apply flex gap-[10px] items-end flex-wrap mb-0;
+}
+.settings-form .form-row button {
+  @apply mt-0 h-[44px] align-middle leading-[0px] text-light text-sm font-medium;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.settings-form .form-row button:hover {
+  @apply text-white;
+}
+.settings-form .form-row .form-field {
+  @apply flex-grow;
+}
+@media only screen and (min-width: 992px) {
+  .settings-form .form-row .form-field {
+    @apply flex-grow-0;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .settings-form .form-row {
+    @apply gap-4;
+  }
+}
+.settings-form .has-button {
+  @apply flex items-center gap-[10px];
+}
+.settings-form .has-button button {
+  @apply w-[55px];
+}
+@media only screen and (min-width: 319px) {
+  .settings-form .has-button input {
+    @apply min-w-[200px];
+  }
+}
+.settings-form input,
+.settings-form select {
+  @apply mb-0 text-sm font-normal min-w-[288px];
+}
+.settings-form input:disabled,
+.settings-form select:disabled {
+  @apply bg-transparent  border border-[#484848];
+}
+.settings-form input:disabled::placeholder,
+.settings-form select:disabled::placeholder {
+  @apply text-orange;
+}
+@media only screen and (min-width: 992px) {
+  .settings-form input,
+.settings-form select {
+    @apply min-w-[320px];
+  }
+}
+.settings-form .form-note {
+  @apply text-[#858585] text-xs font-normal flex gap-3 items-center mt-4;
+}
+.settings-form .form-note .info-icon {
+  @apply w-4 h-4;
+}
+.settings-form label {
+  @apply text-xs font-normal;
+}
+
+.account-profile-template .acc--row {
+  @apply flex flex-col;
+}
+.account-profile-template .acc--row .acc--col-1 {
+  @apply order-2 pt-28;
+}
+@media only screen and (min-width: 768px) {
+  .account-profile-template .acc--row .acc--col-1 {
+    @apply order-1 pt-0;
+  }
+}
+.account-profile-template .acc--row .acc--col-2 {
+  @apply flex-grow order-2;
+}
+.account-profile-template .acc--row .acc--col-2 .acc--innerRow {
+  @apply flex flex-col;
+}
+.account-profile-template .acc--row .acc--col-2 .acc--innerRow .acc--innerCol-1 {
+  @apply order-1 absolute top-0 z-60 w-full;
+}
+@media only screen and (min-width: 768px) {
+  .account-profile-template .acc--row .acc--col-2 .acc--innerRow .acc--innerCol-1 {
+    @apply relative;
+  }
+}
+.account-profile-template .acc--row .acc--col-2 .acc--innerRow .acc--innerCol-2 {
+  @apply flex-grow order-2;
+}
+@media only screen and (min-width: 768px) {
+  .account-profile-template .acc--row .acc--col-2 {
+    @apply order-2;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .account-profile-template .acc--row {
+    @apply flex-row;
+  }
+}
+
+.profile--tabs {
+  @apply relative mx-0;
+}
+@media only screen and (min-width: 768px) {
+  .profile--tabs {
+    @apply mx-3;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .profile--tabs {
+    @apply mx-16;
+  }
+}
+
+.team-creation-filters {
+  @apply flex items-center justify-end gap-3;
+}
+.team-creation-filters .dropdown-filters {
+  @apply my-0;
+}
+.team-creation-filters .dropdown-filters select {
+  @apply mb-0;
+}
+.team-creation-filters button {
+  @apply h-[36px] py-1;
+}
+
+.profile-summary-pane {
+  @apply h-full flex flex-col justify-between bg-secondary min-h-max;
+}
+@media only screen and (min-width: 768px) {
+  .profile-summary-pane {
+    @apply w-[242px] min-h-screen;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .profile-summary-pane {
+    @apply w-[272px] min-h-screen;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .profile-summary-pane {
+    @apply w-[352px];
+  }
+}
+
+.member--info {
+  @apply bg-accent--blue text-center text-[11px] pt-6 pb-3 px-5  z-70 -mt-[60px];
+}
+.member--info .user-profile {
+  @apply relative w-max mx-auto z-70;
+}
+@media only screen and (min-width: 768px) {
+  .member--info .user-profile {
+    @apply -top-0;
+  }
+}
+.member--info .user-profile button.edit-profile {
+  @apply absolute bg-light--blue rounded-full grid place-content-center w-[22px] h-[22px] right-0 bottom-1 transition-all ease-in-out duration-200;
+}
+.member--info .user-profile button.edit-profile:hover {
+  @apply bg-orange;
+}
+.member--info h3 {
+  @apply text-[15px] font-semibold capitalize;
+}
+.member--info p {
+  @apply font-normal text-[#C7C7C7];
+}
+.member--info ul {
+  @apply flex justify-center items-center text-center gap-8 pt-3 mt-5 border-t border-slate-600;
+}
+.member--info ul li {
+  @apply flex gap-1 items-baseline leading-[0px] text-white;
+}
+@media only screen and (min-width: 768px) {
+  .member--info {
+    @apply -mt-0;
+  }
+}
+
+.member--ranking {
+  @apply relative;
+}
+.member--ranking ul {
+  @apply flex justify-center items-center text-center gap-8 py-4 w-max mx-auto relative gap-10;
+}
+.member--ranking h4 {
+  @apply text-accent--green text-[15px] font-semibold;
+}
+.member--ranking p {
+  @apply text-[13px] font-medium;
+}
+.member--ranking::after {
+  @apply w-[1px] h-14 bg-[#484848] absolute;
+  content: "";
+  position: absolute;
+  left: 48%;
+  transform: translateX(-48%);
+  bottom: 10%;
+}
+@media only screen and (min-width: 768px) {
+  .member--ranking {
+    @apply bg-accent-grey;
+  }
+}
+
+.member--game-id {
+  @apply flex items-center justify-between py-3 px-4 rounded mb-4 mx-[18px] bg-accent--blue;
+}
+.member--game-id button {
+  @apply mt-0 min-w-[86px] h-9 py-2 flex items-center gap-2;
+}
+.member--game-id h4 {
+  @apply text-sm;
+}
+
+.member--points {
+  @apply bg-accent-grey mx-[18px] my-3 py-1 px-4 text-xs;
+}
+.member--points div {
+  @apply flex justify-between my-[10px];
+}
+
+.account-banner {
+  @apply relative;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.account-banner::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.account-banner .account-banner--image {
+  @apply w-full h-[110px];
+  background: url(https://cyber-battles-dev.s3.amazonaws.com/images/account-pages/profile-banner.jpg) right 0 top 0/cover no-repeat;
+}
+@media only screen and (min-width: 768px) {
+  .account-banner .account-banner--image {
+    @apply h-[150px];
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .account-banner .account-banner--image {
+    @apply h-[180px];
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .account-banner .account-banner--image {
+    @apply h-[230px];
+  }
+}
+.account-banner button {
+  @apply mt-0 min-w-[86px] px-3 h-9 text-xs py-2 flex items-center gap-2 absolute bottom-5 right-2 z-40;
+}
+@media only screen and (min-width: 568px) {
+  .account-banner button {
+    @apply text-xs right-3 bottom-8;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .account-banner button {
+    @apply text-xs right-8 bottom-5;
+  }
+}
+
+.account-profile-tab-content {
+  @apply py-7 min-h-screen px-4;
+}
+.account-profile-tab-content .icon-tab--content-title {
+  @apply flex justify-between items-center pb-5 border-b border-b-[#4B4848] flex-wrap;
+}
+.account-profile-tab-content .icon-tab--content-title h3 {
+  @apply text-[22px] font-bold;
+}
+@media only screen and (min-width: 768px) {
+  .account-profile-tab-content .icon-tab--content-title h3 {
+    @apply text-[26px];
+  }
+}
+.account-profile-tab-content .icon-tab--content-title button {
+  @apply m-0;
+}
+.account-profile-tab-content .icon-tab--content {
+  @apply text-center my-5;
+}
+.account-profile-tab-content .icon-tab--content p {
+  @apply text-[#858585] text-sm font-normal;
+}
+
+.simple-tabs {
+  @apply overflow-x-scroll rounded-lg left-auto -mt-6 sticky top-[90px] z-70;
+}
+@media only screen and (min-width: 568px) {
+  .simple-tabs {
+    @apply overflow-x-hidden relative top-0;
+  }
+}
+
+.simple-tabs-list {
+  @apply flex w-full;
+}
+.simple-tabs-list .simple-tabs-item {
+  @apply bg-grey font-semibold text-sm py-4 px-6 cursor-pointer relative w-40 text-center;
+}
+.simple-tabs-list .simple-tabs-item:hover, .simple-tabs-list .simple-tabs-item:active, .simple-tabs-list .simple-tabs-item.active {
+  @apply bg-tabs--grey;
+}
+.simple-tabs-list .simple-tabs-item:hover::after, .simple-tabs-list .simple-tabs-item:active::after, .simple-tabs-list .simple-tabs-item.active::after {
+  content: "";
+  @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute;
+}
+.simple-tabs-list .simple-tabs-item:first-child {
+  @apply rounded-tl-lg rounded-bl-lg;
+}
+.simple-tabs-list .simple-tabs-item:first-child:hover::after, .simple-tabs-list .simple-tabs-item:first-child:active::after {
+  content: "";
+  @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute;
+}
+.simple-tabs-list .simple-tabs-item:last-child {
+  @apply rounded-tr-lg rounded-br-lg;
+}
+.simple-tabs-list .simple-tabs-item:last-child:hover::after, .simple-tabs-list .simple-tabs-item:last-child:active::after {
+  content: "";
+  @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute rounded-br-[16px];
+}
+@media only screen and (min-width: 568px) {
+  .simple-tabs-list {
+    @apply w-max;
+  }
+}
+
+.icon-tabs {
+  @apply overflow-x-scroll rounded-none left-auto -mt-6 sticky top-0 z-70;
+}
+@media only screen and (min-width: 568px) {
+  .icon-tabs {
+    @apply overflow-x-hidden relative top-0 rounded-lg;
+  }
+}
+
+.icon-tabs-list {
+  @apply flex w-full justify-center mx-auto;
+}
+.icon-tabs-list .icon-tabs-item {
+  @apply flex justify-center gap-2 bg-grey font-semibold text-sm py-4 px-6 cursor-pointer relative w-[164px] text-center flex-grow;
+}
+.icon-tabs-list .icon-tabs-item .tab--icon, .icon-tabs-list .icon-tabs-item span {
+  min-width: 30px;
+}
+.icon-tabs-list .icon-tabs-item:hover, .icon-tabs-list .icon-tabs-item:active, .icon-tabs-list .icon-tabs-item.active {
+  @apply bg-tabs--grey;
+}
+.icon-tabs-list .icon-tabs-item:hover::after, .icon-tabs-list .icon-tabs-item:active::after, .icon-tabs-list .icon-tabs-item.active::after {
+  content: "";
+  @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute;
+}
+.icon-tabs-list .icon-tabs-item:first-child {
+  @apply rounded-none;
+}
+.icon-tabs-list .icon-tabs-item:first-child:hover::after, .icon-tabs-list .icon-tabs-item:first-child:active::after {
+  content: "";
+  @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute;
+}
+@media only screen and (min-width: 568px) {
+  .icon-tabs-list .icon-tabs-item:first-child {
+    @apply rounded-tl-lg rounded-bl-lg;
+  }
+}
+.icon-tabs-list .icon-tabs-item:last-child {
+  @apply rounded-none;
+}
+.icon-tabs-list .icon-tabs-item:last-child:hover::after, .icon-tabs-list .icon-tabs-item:last-child:active::after {
+  content: "";
+  @apply w-full h-[4px] left-0 bottom-0 bg-light-blue absolute rounded-br-[16px];
+}
+@media only screen and (min-width: 568px) {
+  .icon-tabs-list .icon-tabs-item:last-child {
+    @apply rounded-tr-lg rounded-br-lg;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .icon-tabs-list {
+    @apply w-max;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .icon-tabs-list {
+    @apply justify-start mx-0;
+  }
+}
+
+.simple-icon-tabs {
+  @apply border-b-[0.5px] border-light mb-7;
+}
+
+.simple-icon-tabs-list {
+  @apply flex w-full justify-items-stretch mx-auto overflow-x-scroll;
+}
+.simple-icon-tabs-list .simple-icon-tabs-item {
+  @apply flex justify-center gap-2 bg-transparent font-semibold text-sm pt-7 pb-4 px-6 cursor-pointer relative w-[164px] text-center flex-grow text-light uppercase transition-all ease-in-out duration-300;
+}
+.simple-icon-tabs-list .simple-icon-tabs-item .tab--icon, .simple-icon-tabs-list .simple-icon-tabs-item span {
+  min-width: 30px;
+}
+.simple-icon-tabs-list .simple-icon-tabs-item:active, .simple-icon-tabs-list .simple-icon-tabs-item:hover, .simple-icon-tabs-list .simple-icon-tabs-item:focus, .simple-icon-tabs-list .simple-icon-tabs-item:focus-visible, .simple-icon-tabs-list .simple-icon-tabs-item.active {
+  @apply text-white;
+}
+.simple-icon-tabs-list .simple-icon-tabs-item:active .tab--icon, .simple-icon-tabs-list .simple-icon-tabs-item:hover .tab--icon, .simple-icon-tabs-list .simple-icon-tabs-item:focus .tab--icon, .simple-icon-tabs-list .simple-icon-tabs-item:focus-visible .tab--icon, .simple-icon-tabs-list .simple-icon-tabs-item.active .tab--icon {
+  filter: brightness(0) invert(1);
+}
+.simple-icon-tabs-list .simple-icon-tabs-item:active::after, .simple-icon-tabs-list .simple-icon-tabs-item:hover::after, .simple-icon-tabs-list .simple-icon-tabs-item:focus::after, .simple-icon-tabs-list .simple-icon-tabs-item:focus-visible::after, .simple-icon-tabs-list .simple-icon-tabs-item.active::after {
+  @apply w-full h-1 bg-light-blue absolute left-0 -bottom-[2.5px];
+  content: "";
+}
+@media only screen and (min-width: 568px) {
+  .simple-icon-tabs-list {
+    overflow-x: initial;
+  }
+}
+
+.simple-icon-tab-content .featured-heading {
+  @apply mb-3;
+}
+
+.primary-table table {
+  @apply table-auto w-full border-separate border-spacing-y-4 text-xs text-center z-30 max-w-full;
+}
+.primary-table thead {
+  @apply bg-grey  uppercase font-semibold px-20 text-left;
+}
+.primary-table thead th {
+  @apply py-6 px-5 whitespace-nowrap;
+}
+.primary-table thead th:first-child {
+  @apply rounded-tl-[10px] rounded-bl-[10px];
+}
+.primary-table thead th:last-child {
+  @apply rounded-tr-[10px] rounded-br-[10px];
+}
+.primary-table tbody tr {
+  @apply scale-100 z-40 transition-all ease-in-out duration-300;
+  border: 2px solid #a6a6a6;
+}
+.primary-table tbody tr:hover {
+  @apply scale-x-100 z-70 bg-dark--blue;
+}
+.primary-table tbody tr:hover td {
+  @apply bg-dark--blue;
+}
+.primary-table tbody tr:hover .info {
+  @apply hidden;
+}
+@media only screen and (min-width: 568px) {
+  .primary-table tbody tr:hover {
+    @apply scale-x-[1.025] z-70 bg-dark--blue;
+  }
+  .primary-table tbody tr:hover td {
+    @apply bg-dark--blue;
+  }
+}
+.primary-table tbody td {
+  @apply bg-secondary py-[6px] px-[10px] border-t border-b border-[#a6a6a6];
+}
+.primary-table tbody td:first-child {
+  @apply rounded-tl-[10px] rounded-bl-[10px] border-l border-[#a6a6a6];
+}
+.primary-table tbody td:last-child {
+  @apply rounded-tr-[10px] rounded-br-[10px]  border-r border-[#a6a6a6];
+}
+.primary-table td {
+  @apply align-middle;
+}
+.primary-table .table-image {
+  @apply w-[48px] h-[48px] border border-light-blue rounded;
+}
+.primary-table .entry {
+  @apply text-accent--green flex items-center gap-1 font-bold justify-center;
+}
+.primary-table .compact-text {
+  @apply mx-auto;
+  width: 90%;
+}
+.primary-table .details {
+  @apply text-left;
+}
+.primary-table button.accept-btn {
+  @apply text-xs w-max px-0 py-3 min-w-[90px] m-0;
+}
+
+.table-flexbox {
+  @apply flex flex-col;
+}
+
+.table-overflowbox {
+  @apply overflow-x-auto sm:-mx-6 lg:-mx-8;
+}
+
+.table-contentbox {
+  @apply py-2 inline-block min-w-full sm:px-6 lg:px-8 max-w-full;
+}
+
+.table-visibility {
+  @apply overflow-visible;
+}
+
+footer {
+  @apply bg-secondary py-7 lg:py-8;
+}
+footer .wrapper {
+  @apply px-6;
+}
+footer .footer-row-1 {
+  @apply flex gap-6;
+}
+footer .footer-row-1 .right-col {
+  @apply flex flex-col gap-5 justify-evenly;
+}
+footer .footer-row-1 .right-col .language-selector {
+  @apply flex justify-between gap-2 items-center;
+}
+footer .footer-row-1 .right-col select {
+  @apply bg-secondary text-white w-[78px] mb-0 px-0 py-0;
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-1 .right-col {
+    @apply items-center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-row-1 .right-col {
+    @apply items-end;
+  }
+}
+footer .footer-row-1 .left-col {
+  @apply w-full;
+}
+footer .footer-row-1 .left-col .footer-menu-links {
+  @apply grid mt-9 gap-0;
+}
+footer .footer-row-1 .left-col .footer-menu-links li a {
+  @apply uppercase;
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-1 .left-col .footer-menu-links li a {
+    @apply font-medium text-sm leading-[42px];
+  }
+}
+@media only screen and (min-width: 568px) {
+  footer .footer-row-1 .left-col .footer-menu-links li a {
+    @apply font-bold text-base leading-7;
+  }
+}
+footer .footer-row-1 .left-col .footer-menu-links li a:hover {
+  @apply text-light;
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-1 .left-col .footer-menu-links {
+    @apply grid-cols-1;
+  }
+}
+@media only screen and (min-width: 568px) {
+  footer .footer-row-1 .left-col .footer-menu-links {
+    @apply grid-cols-4;
+  }
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-1 {
+    @apply flex-col justify-center items-center text-center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-row-1 {
+    @apply flex-row justify-between items-start text-left;
+  }
+}
+footer .footer-row-2 {
+  @apply flex mt-10 gap-7 text-sm;
+}
+footer .footer-row-2 .footer-col h4 {
+  @apply mb-3 font-medium;
+}
+footer .footer-row-2 .footer-col ul {
+  @apply flex gap-[20px];
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-2 .footer-col ul {
+    @apply items-center justify-center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-row-2 .footer-col ul {
+    @apply items-start justify-start;
+  }
+}
+footer .footer-row-2 .footer-col a:hover img {
+  filter: invert(50%);
+}
+footer .footer-row-2 .footer-col .foot-links {
+  @apply block font-light;
+}
+footer .footer-row-2 .footer-col .foot-links li {
+  @apply inline pr-[10px] pl-[10px] relative;
+}
+footer .footer-row-2 .footer-col .foot-links li:first-child {
+  @apply pl-0;
+}
+footer .footer-row-2 .footer-col .foot-links li:not(:last-child) {
+  border-right: 1px solid #fff;
+}
+footer .footer-row-2 .footer-col .copyright {
+  @apply font-normal text-light;
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-2 .footer-col .copyright {
+    @apply text-center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-row-2 .footer-col .copyright {
+    @apply text-right;
+  }
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-2 {
+    @apply flex-col justify-center items-center text-center;
+  }
+  footer .footer-row-2 .col-1, footer .footer-row-2 .col-2, footer .footer-row-2 .col-3, footer .footer-row-2 .col-4 {
+    width: 100%;
+  }
+  footer .footer-row-2 .col-1 {
+    order: 2;
+  }
+  footer .footer-row-2 .col-2 {
+    order: 3;
+  }
+  footer .footer-row-2 .col-3 {
+    order: 4;
+  }
+  footer .footer-row-2 .col-4 {
+    order: 1;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-row-2 {
+    @apply flex-row justify-between text-left;
+  }
+  footer .footer-row-2 .col-1 {
+    width: 15%;
+    order: 1;
+  }
+  footer .footer-row-2 .col-2 {
+    width: 25%;
+    order: 2;
+  }
+  footer .footer-row-2 .col-3 {
+    width: 35%;
+    order: 3;
+  }
+  footer .footer-row-2 .col-4 {
+    width: 25%;
+    order: 4;
+  }
+}
+
+.shop-template {
+  @apply min-w-full min-h-screen pb-96;
+}
+
+.shop-grid {
+  @apply grid grid-cols-1 gap-4 mt-5 mx-4 max-w-full;
+}
+@media only screen and (min-width: 375px) {
+  .shop-grid {
+    @apply grid-cols-2;
+  }
+}
+@media only screen and (min-width: 568px) {
+  .shop-grid {
+    @apply grid-cols-3;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .shop-grid {
+    @apply mx-20;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .shop-grid {
+    @apply grid-cols-6 mx-0;
+  }
+}
+
+.shop-row {
+  @apply mx-5;
+}
+.shop-row .shop-row-para {
+  @apply text-placeholder font-normal text-sm my-3;
+}
+.shop-row .shop-card {
+  @apply flex flex-col items-center text-white border border-[#2C2C2C] rounded-md min-w-full px-4 py-4;
+}
+.shop-row .shop-card:hover {
+  @apply bg-[#161D2C] cursor-pointer;
+}
+.shop-row .shop-card .shop-credit-icon {
+  @apply mx-4 items-center;
+}
+.shop-row .shop-card .shop-credit {
+  @apply flex justify-between items-center bg-[#2A5080] text-sm min-w-[149px] border-[transparent] rounded-[4px] py-2 md:py-3 px-2;
+}
+@media only screen and (min-width: 375px) {
+  .shop-row .shop-card .shop-credit {
+    @apply min-w-[129px];
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shop-row .shop-card .shop-credit {
+    @apply min-w-[169px];
+  }
+}
+.shop-row .shop-card .shop-credit p {
+  @apply font-normal text-xs;
+}
+.shop-row .shop-card .shop-credit h3 {
+  @apply font-bold;
+}
+.shop-row .shop-card .btn-bordered {
+  @apply mt-2 pl-5 min-w-[149px];
+}
+@media only screen and (min-width: 375px) {
+  .shop-row .shop-card .btn-bordered {
+    @apply min-w-[129px];
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shop-row .shop-card .btn-bordered {
+    @apply min-w-[169px];
+  }
+}
+.shop-row .shop-card .shop-package {
+  @apply py-2;
+}
+
+.setting-title {
+  @apply w-full block text-sm font-bold relative z-20 mt-[43px];
+}
+.setting-title h3, .setting-title h2, .setting-title h1, .setting-title h4 {
+  @apply w-max bg-primary  relative z-20 pr-5;
+}
+.setting-title:after {
+  @apply absolute w-full h-[1px] bg-grey top-1/2 z-10;
+  content: "";
+}
+
+.detailed-scroll-box {
+  @apply bg-secondary rounded-[20px] py-[38px] pr-3 mb-10 relative;
+}
+.detailed-scroll-box .scroller-box {
+  @apply overflow-y-scroll pl-6 pr-3;
+}
+.detailed-scroll-box .scroller-box::-webkit-scrollbar-track {
+  @apply bg-secondary;
+  -webkit-box-shadow: inset 0px 0px 0px #212529;
+}
+.detailed-scroll-box .scroller-box::-webkit-scrollbar {
+  width: 6px;
+  background-color: #212529;
+}
+.detailed-scroll-box .scroller-box::-webkit-scrollbar-thumb {
+  @apply absolute right-0 top-0 mr-10;
+  background-color: #343a40;
+  border-radius: 30px;
+}
+.detailed-scroll-box .scroller-box .detailed-scroll-box--content {
+  @apply h-[473px];
+}
+.detailed-scroll-box .scroller-box .detailed-scroll-box--content h3 {
+  @apply font-bold text-lg uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .detailed-scroll-box .scroller-box .detailed-scroll-box--content h3 {
+    @apply text-2xl;
+  }
+}
+.detailed-scroll-box .scroller-box .detailed-scroll-box--content h4 {
+  @apply font-semibold text-sm;
+}
+@media only screen and (min-width: 768px) {
+  .detailed-scroll-box .scroller-box .detailed-scroll-box--content h4 {
+    @apply text-lg;
+  }
+}
+.detailed-scroll-box .scroller-box .detailed-scroll-box--content p {
+  @apply font-normal text-xs my-5;
+}
+@media only screen and (min-width: 568px) {
+  .detailed-scroll-box .scroller-box .detailed-scroll-box--content p {
+    @apply text-sm my-[26px];
+  }
+}
+@media only screen and (min-width: 568px) {
+  .detailed-scroll-box .scroller-box .detailed-scroll-box--content {
+    @apply h-[380px];
+  }
+}
+
+.cash-matches-bg {
+  @apply max-w-full h-fit mb-16 bg-[url("https://cyber-battles-dev.s3.amazonaws.com/images/cashMatches/cash-matches-bg.svg")] bg-left-top bg-no-repeat bg-cover w-full h-[700px];
+}
+@media only screen and (min-width: 568px) {
+  .cash-matches-bg {
+    @apply h-[550px];
+  }
+}
+
+.cash-matches-wrapper {
+  @apply w-[80%] mx-auto;
+}
+
+.cash-matches-content {
+  @apply flex flex-col justify-between items-center py-10;
+}
+.cash-matches-content h3 {
+  @apply text-3xl font-bold text-center leading-none;
+}
+@media only screen and (min-width: 568px) {
+  .cash-matches-content h3 {
+    @apply text-[42px];
+  }
+}
+.cash-matches-content p {
+  @apply text-sm font-normal text-center mt-5;
+}
+@media only screen and (min-width: 568px) {
+  .cash-matches-content p {
+    @apply text-base mt-8;
+  }
+}
+
+.cash-matches-cards {
+  @apply grid grid-cols-1 justify-items-center gap-4 w-[80%] mx-auto mt-4;
+}
+@media only screen and (min-width: 568px) {
+  .cash-matches-cards {
+    @apply grid-cols-2;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .cash-matches-cards {
+    @apply grid-cols-3;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .cash-matches-cards {
+    @apply grid-cols-5 w-[95%];
+  }
+  .cash-matches-cards .card-extra {
+    @apply hidden;
+  }
+}
+
+.grid-card {
+  @apply relative w-max;
+}
+
+.grid-content {
+  @apply absolute bottom-[7px] left-0 bg-[#032A66] rounded-b-xl w-full text-center font-normal text-sm uppercase leading-4 py-2;
+}
+
+.detailed-scroll-box {
+  @apply my-10;
+}
+
+footer {
+  @apply bg-secondary py-7 lg:py-8;
+}
+footer .wrapper {
+  @apply px-6;
+}
+footer .footer-row-1 {
+  @apply flex gap-6;
+}
+footer .footer-row-1 .right-col {
+  @apply flex flex-col gap-5 justify-evenly;
+}
+footer .footer-row-1 .right-col .language-selector {
+  @apply flex justify-between gap-2 items-center;
+}
+footer .footer-row-1 .right-col select {
+  @apply bg-secondary text-white w-[78px] mb-0 px-0 py-0;
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-1 .right-col {
+    @apply items-center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-row-1 .right-col {
+    @apply items-end;
+  }
+}
+footer .footer-row-1 .left-col {
+  @apply w-full;
+}
+footer .footer-row-1 .left-col .footer-menu-links {
+  @apply grid mt-9 gap-0;
+}
+footer .footer-row-1 .left-col .footer-menu-links li a {
+  @apply uppercase;
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-1 .left-col .footer-menu-links li a {
+    @apply font-medium text-sm leading-[42px];
+  }
+}
+@media only screen and (min-width: 568px) {
+  footer .footer-row-1 .left-col .footer-menu-links li a {
+    @apply font-bold text-base leading-7;
+  }
+}
+footer .footer-row-1 .left-col .footer-menu-links li a:hover {
+  @apply text-light;
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-1 .left-col .footer-menu-links {
+    @apply grid-cols-1;
+  }
+}
+@media only screen and (min-width: 568px) {
+  footer .footer-row-1 .left-col .footer-menu-links {
+    @apply grid-cols-4;
+  }
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-1 {
+    @apply flex-col justify-center items-center text-center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-row-1 {
+    @apply flex-row justify-between items-start text-left;
+  }
+}
+footer .footer-row-2 {
+  @apply flex mt-10 gap-7 text-sm;
+}
+footer .footer-row-2 .footer-col h4 {
+  @apply mb-3 font-medium;
+}
+footer .footer-row-2 .footer-col ul {
+  @apply flex gap-[20px];
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-2 .footer-col ul {
+    @apply items-center justify-center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-row-2 .footer-col ul {
+    @apply items-start justify-start;
+  }
+}
+footer .footer-row-2 .footer-col a:hover img {
+  filter: invert(50%);
+}
+footer .footer-row-2 .footer-col .foot-links {
+  @apply block font-light;
+}
+footer .footer-row-2 .footer-col .foot-links li {
+  @apply inline pr-[10px] pl-[10px] relative;
+}
+footer .footer-row-2 .footer-col .foot-links li:first-child {
+  @apply pl-0;
+}
+footer .footer-row-2 .footer-col .foot-links li:not(:last-child) {
+  border-right: 1px solid #fff;
+}
+footer .footer-row-2 .footer-col .copyright {
+  @apply font-normal text-light;
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-2 .footer-col .copyright {
+    @apply text-center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-row-2 .footer-col .copyright {
+    @apply text-right;
+  }
+}
+@media only screen and (min-width: 319px) {
+  footer .footer-row-2 {
+    @apply flex-col justify-center items-center text-center;
+  }
+  footer .footer-row-2 .col-1, footer .footer-row-2 .col-2, footer .footer-row-2 .col-3, footer .footer-row-2 .col-4 {
+    width: 100%;
+  }
+  footer .footer-row-2 .col-1 {
+    order: 2;
+  }
+  footer .footer-row-2 .col-2 {
+    order: 3;
+  }
+  footer .footer-row-2 .col-3 {
+    order: 4;
+  }
+  footer .footer-row-2 .col-4 {
+    order: 1;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .footer-row-2 {
+    @apply flex-row justify-between text-left;
+  }
+  footer .footer-row-2 .col-1 {
+    width: 15%;
+    order: 1;
+  }
+  footer .footer-row-2 .col-2 {
+    width: 25%;
+    order: 2;
+  }
+  footer .footer-row-2 .col-3 {
+    width: 35%;
+    order: 3;
+  }
+  footer .footer-row-2 .col-4 {
+    width: 25%;
+    order: 4;
+  }
+}
+
+nav {
+  @apply w-full bg-secondary shadow relative z-70;
+}
+nav .nav-container {
+  @apply flex flex-row justify-start mx-auto flex items-center px-1 flex py-2 gap-5;
+}
+@media only screen and (min-width: 768px) {
+  nav .nav-container {
+    @apply px-4;
+  }
+}
+nav .nav-left-col {
+  @apply flex items-center justify-between py-3 py-0 flex gap-4 items-center flex;
+}
+nav .nav-right-col {
+  @apply flex-grow;
+}
+nav .navigation {
+  @apply flex flex-row items-center justify-end gap-4 pb-0 mt-0 relative min-h-fit h-auto w-full;
+}
+nav .navigation ul {
+  @apply flex flex-row items-center justify-center gap-5;
+}
+nav .navigation ul li {
+  @apply text-white mt-2 mb-2 text-sm;
+}
+nav .navigation ul li:hover {
+  @apply text-light--blue;
+}
+nav .navigation ul li button {
+  @apply hidden;
+}
+nav .navigation ul li button.user-profile {
+  @apply block p-0;
+}
+@media only screen and (min-width: 1024px) {
+  nav .navigation ul li button {
+    @apply block my-0 min-w-max px-3 py-2 capitalize;
+  }
+}
+nav .navigation ul li .dropdown-btn {
+  @apply flex justify-center items-center;
+}
+nav .navigation ul.account-links {
+  @apply gap-3;
+}
+nav .navigation ul.links-list {
+  @apply hidden;
+}
+@media only screen and (min-width: 1024px) {
+  nav .navigation ul.links-list {
+    @apply mr-auto border-r-0 flex;
+    border-right: 0.5px solid #495057;
+    margin-right: 18px !important;
+  }
+}
+nav .navigation .links {
+  @apply flex;
+}
+@media only screen and (min-width: 1024px) {
+  nav .navigation {
+    @apply justify-between gap-0;
+  }
+}
+nav ul.dropdown-menu {
+  @apply py-1 hidden absolute bg-secondary w-[192px] py-4 px-[18px] h-auto border-t-2 border-t-light--blue;
+  border-radius: 0 0 20px 20px;
+}
+nav ul.dropdown-menu li {
+  @apply mb-4;
+}
+
+.dropdown-btn.lang-selector {
+  @apply gap-2 px-0;
+}
+.dropdown-btn.lang-selector .flag {
+  @apply mr-3;
+}
+
+.guest, .member {
+  @apply flex items-center gap-4;
+}
+.guest.hidden, .member.hidden {
+  display: none;
+}
+
+.notification-bell {
+  @apply relative p-0;
+}
+.notification-bell .noti-dot {
+  @apply w-2 h-2 bg-orange rounded-full block absolute -top-2 right-[2px];
+}
+
+.profile-avatar {
+  @apply rounded-full object-scale-down h-[39px] w-[39px] cursor-pointer;
+}
+
+.search-box {
+  @apply hidden;
+}
+@media only screen and (min-width: 768px) {
+  .search-box {
+    @apply block relative z-10;
+  }
+  .search-box input.search--bar {
+    @apply rounded-[30px] min-w-[40px] bg-grey pl-10 mb-0;
+  }
+  .search-box .searchIcon {
+    @apply absolute top-[40%] -translate-y-[40%] left-3 z-40 cursor-pointer;
+  }
+}
+
+.search-button {
+  @apply block;
+}
+@media only screen and (min-width: 768px) {
+  .search-button {
+    @apply hidden;
+  }
+}
+
+.toggler {
+  @apply block;
+}
+@media only screen and (min-width: 1024px) {
+  .toggler {
+    @apply hidden;
+  }
+}

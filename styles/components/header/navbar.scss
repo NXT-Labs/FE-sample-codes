@@ -1,0 +1,122 @@
+nav {
+  @apply w-full bg-secondary shadow relative z-70;
+
+  .nav-container {
+      @apply flex flex-row justify-start mx-auto flex items-center px-1 flex py-2 gap-5;
+      @include r-plus{
+        @apply px-4;
+      }
+  }
+  .nav-left-col {
+    @apply flex items-center justify-between py-3 py-0 flex gap-4 items-center flex;
+  }
+  .nav-right-col{
+    @apply flex-grow;
+  }
+  .navigation {
+      @apply  flex flex-row items-center justify-end gap-4 pb-0 mt-0 relative min-h-fit h-auto w-full;
+      ul {
+        @apply flex flex-row items-center justify-center gap-5;
+        li {
+          @apply text-white mt-2 mb-2 text-sm;
+          &:hover {
+            @apply text-light--blue;
+          }
+          button {
+            @apply hidden;
+            &.user-profile{
+              @apply block p-0;
+            }
+            @include r-large{
+              @apply block my-0 min-w-max px-3 py-2 capitalize;
+              &.notification-bell{
+                @apply p-0;
+              }
+            }
+          }
+          .dropdown-btn {
+            @apply flex justify-center items-center;
+          }
+        }
+        &.account-links{
+          @apply gap-3;
+        }
+        &.links-list {
+         @apply hidden;
+          @include r-large{
+            @apply mr-auto border-r-0 flex;
+            border-right: 0.5px solid #495057;
+            margin-right: 18px !important;
+          }
+        }
+      }
+      .links{
+        @apply flex;
+      }
+      @include r-large{
+        @apply justify-between gap-0;
+      }
+  }
+  ul.dropdown-menu {
+    @apply py-1 hidden absolute bg-secondary w-[192px] py-4 px-[18px] h-auto border-t-2 border-t-light--blue;
+    border-radius: 0 0 20px 20px;
+    li {
+      @apply mb-4;
+    }
+  }
+  img{
+    @apply cursor-pointer;
+  }
+}
+// LANGUAGE SELECTOR
+.dropdown-btn.lang-selector {
+  @apply gap-2 px-0;
+  .flag{
+    @apply mr-3;
+  }
+}
+.guest, .member {
+  @apply flex items-center gap-4;
+  &.hidden{
+    display: none;
+  }
+}
+// NOTIFICATION BELL
+button{
+  &.notification-bell{
+    @apply relative p-0;
+    .noti-dot{
+      @apply w-2 h-2 bg-orange rounded-full block absolute -top-[3px] right-[2px];
+    }
+  }
+}
+// USER AVATAR
+.profile-avatar{
+  @apply rounded-full object-scale-down h-[39px] w-[39px] cursor-pointer;
+}
+// SEARCH BAR
+.search-box{
+  @apply hidden;
+  @include r-plus{
+    @apply block relative z-10;
+    input.search--bar {
+      @apply rounded-[30px] min-w-[40px] bg-grey pl-10 mb-0;
+    }
+    .searchIcon{
+      @apply absolute top-[40%] -translate-y-[40%] left-3 z-40 cursor-pointer;
+    }
+  }
+}
+.search-button{
+  @apply block;
+  @include r-plus{
+    @apply hidden;
+  }
+}
+// TOGGLER BUTTON/
+.toggler{
+  @apply block;
+  @include r-large{
+    @apply hidden;
+  }
+}

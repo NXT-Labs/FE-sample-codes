@@ -1,0 +1,55 @@
+.account-profile-template {
+  .acc--row {
+    @apply flex flex-col;
+    .acc--col-1 {
+      @apply order-2 pt-28;
+      @include r-plus {
+        @apply order-1 pt-0;
+      }
+    }
+    .acc--col-2 {
+      @apply flex-grow order-2;
+      .acc--innerRow {
+        @apply flex flex-col;
+        .acc--innerCol-1 {
+          @apply order-1 absolute top-[76px] z-60 w-full;
+          @include r-plus{
+            @apply relative top-0;
+          }
+        }
+        .acc--innerCol-2 {
+          @apply flex-grow order-2;
+        }
+      }
+      @include r-plus {
+        @apply order-2;
+      }
+    }
+
+    @include r-plus {
+      @apply flex-row;
+    }
+  }
+}
+.profile--tabs {
+  @apply relative mx-0;
+  @include r-plus{
+    @apply mx-3;
+  }
+  @include r-laptop{
+    @apply mx-16;
+  }
+}
+
+.team-creation-filters {
+  @apply flex items-center justify-end gap-3;
+  .dropdown-filters{
+    @apply my-0;
+    select{
+      @apply mb-0;
+    }
+  }
+  button{
+    @apply h-[36px] py-1;
+  }
+}

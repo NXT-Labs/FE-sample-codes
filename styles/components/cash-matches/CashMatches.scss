@@ -1,0 +1,52 @@
+.cash-matches-bg {
+  @apply relative max-w-full h-fit mb-16 bg-[url('https://cyber-battles-dev.s3.amazonaws.com/images/cashMatches/cash-matches-bg.svg')] bg-left-top bg-no-repeat bg-cover w-full h-[700px] ;
+  @include r-medium{
+    @apply h-[550px];
+  }
+}
+.cash-matches-bg-effect {
+  @apply absolute top-52 right-0;
+}
+.cash-matches-wrapper {
+  @apply w-[86%] mx-auto;
+}
+.cash-matches-content {
+  @apply flex flex-col justify-between items-center py-10;
+
+  h3 {
+    @apply text-3xl font-bold text-center leading-none;
+    @include r-medium {
+      @apply text-[42px];
+    }
+  }
+  p {
+    @apply text-sm font-normal text-center mt-5;
+    @include r-medium {
+      @apply text-base mt-8;
+    }
+  }
+}
+.cash-matches-cards {
+  @apply grid grid-cols-1 justify-items-center gap-4 w-[80%] mx-auto mt-4;
+  @include r-medium{
+    @apply grid-cols-2;
+  }
+  @include r-plus {
+    @apply grid-cols-3;
+  }
+  @include r-between {
+    @apply grid-cols-5 w-[95%];
+    .card-extra {
+      @apply hidden;
+    }
+  }
+}
+.grid-card {
+  @apply relative w-max;
+}
+.grid-content {
+  @apply absolute bottom-[7px] left-0 bg-[#032A66] rounded-b-xl w-full text-center font-normal text-sm uppercase leading-4 py-2;
+} 
+.detailed-scroll-box {
+  @apply my-10;
+}

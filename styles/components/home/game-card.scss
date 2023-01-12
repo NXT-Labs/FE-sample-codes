@@ -1,0 +1,43 @@
+.game-card {
+  @apply relative transition-all ease-in-out duration-500 block text-center max-w-[270px]  cursor-pointer bg-dark--blue rounded-[30px];
+  .game--title {
+    @apply absolute bottom-0 bg-dark--blue text-sm text-white uppercase w-full max-w-full block p-3 rounded-br-[20px] rounded-bl-[20px];
+  }
+  &:hover {
+    @apply -translate-y-[2.3rem];
+    .game--title {
+      @apply bg-light--blue;
+    }
+  }
+  .game-slider-image{
+    span, img{
+      @apply rounded-[20px] object-cover object-top max-w-[192px] min-w-[192px] min-h-[254px];
+      @include r-desktop-large{
+        @apply max-w-[230px] min-w-[230px] min-h-[290px];
+      }
+      @include r-extra-large{
+        @apply max-w-[250px] min-w-[250px] min-h-[310px];
+      }
+      @include r-extra-large-desktop{
+        @apply max-w-[270px] min-w-[270px] min-h-[330px];
+      }
+    }
+    
+  }
+  @include r-extra-large{
+    @apply rounded-[30px];
+  }
+}
+.slider-card {
+  @apply max-w-[192px] min-w-[192px] min-h-[254px];
+  padding: 38px 0;
+  @include r-desktop-large{
+    @apply max-w-[230px] min-w-[230px] min-h-[254px];
+  }
+  @include r-extra-large{
+    @apply max-w-[250px] min-w-[250px] min-h-[310px];
+  }
+  @include r-extra-large-desktop{
+    @apply max-w-[270px] min-w-[270px] min-h-[330px];
+  }
+}

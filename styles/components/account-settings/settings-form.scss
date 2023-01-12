@@ -1,0 +1,66 @@
+.settings-form {
+  .form-row {
+    @apply flex gap-[10px] items-end flex-wrap mb-0;
+    button {
+      @apply mt-0 h-[44px] align-middle leading-[0px] text-light text-sm font-medium;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      &:hover {
+        @apply text-white;
+      }
+    }
+    .form-field{
+      @apply flex-grow;
+      @include r-laptop{
+        @apply flex-grow-0;
+      }
+    }
+    @include r-medium{
+      @apply gap-4;
+    }
+  }
+  .has-button {
+    @apply flex items-center gap-[10px];
+    button{
+      @apply w-[55px];
+    }
+    @include r-xsmall{
+      input{
+        @apply  min-w-[200px];
+      }
+    }
+  }
+  input,
+  select {
+    @apply mb-0 text-sm font-normal min-w-[288px];
+    // &.disabled {
+    //   @apply  bg-transparent  border border-[#484848];
+    //   &::placeholder{
+    //     @apply text-orange;
+    //   }
+    //   pointer-events: none;
+    // }
+    @include r-laptop{
+      @apply  min-w-[320px];
+    }
+  }
+  .form-note {
+    @apply text-[#858585] text-xs font-normal flex gap-3 items-center mt-4;
+    .info-icon{
+      @apply w-4 h-4;
+    }
+  }
+  label {
+    @apply text-xs font-normal;
+  }
+}
+
+.disabled {
+  input{
+    @apply  bg-transparent  border border-[#484848];
+    &::placeholder{
+      @apply text-orange;
+    }
+    pointer-events: none;
+  }
+
+}

@@ -1,0 +1,30 @@
+.team-game-card{
+  @apply bg-secondary w-full max-w-full rounded-xl mx-auto mb-6;
+  .team-game-image{
+    @apply max-w-[290px] object-scale-down;
+    @include r-medium{
+      @apply max-w-[330px];
+    }
+  }
+  .team-game-info{
+    @apply px-4 flex justify-between flex-wrap items-center text-sm font-normal pb-4;
+    .team-game-group{
+      @apply text-lg font-bold;
+    }
+    .team-game-title{
+      span{
+        @apply uppercase text-orange relative  pl-2;
+        &:before{
+          content: '|';
+          @apply text-white absolute left-0 bottom-0;
+        }
+      }
+    }
+    .game-type{
+      @apply flex justify-start gap-1 items-center mt-1;
+    }
+    .btn-bordered{
+      @apply min-w-max;
+    }
+  }
+}

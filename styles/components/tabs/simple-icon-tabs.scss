@@ -1,0 +1,31 @@
+.simple-icon-tabs{
+  @apply border-b-[0.5px] border-light mb-7;
+}
+.simple-icon-tabs-list{
+  @apply flex w-full justify-items-stretch mx-auto overflow-x-scroll;
+  .simple-icon-tabs-item{
+    @apply flex justify-center gap-2 bg-transparent font-semibold text-sm pt-7 pb-4 px-6 cursor-pointer relative w-[164px] text-center flex-grow text-light uppercase transition-all ease-in-out duration-300;
+    .tab--icon, span{
+      min-width: 30px;
+    }
+    &:active, &:hover, &:focus, &:focus-visible, &.active{
+      @apply text-white;
+      .tab--icon{
+        filter: brightness(0) invert(1);
+      }
+      &::after{
+        @apply w-full h-1 bg-light-blue absolute left-0 -bottom-[2.5px];
+        content: '';
+      }
+    }
+  }
+
+  @include r-medium{
+    overflow-x: initial;
+  }
+}
+.simple-icon-tab-content{
+  .featured-heading{
+    @apply mb-3;
+  }
+}

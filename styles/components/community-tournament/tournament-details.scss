@@ -1,0 +1,150 @@
+.tournament-details{
+  @apply flex p-4 bg-secondary rounded-[0px] gap-0 w-[1030px] max-w-full mx-auto flex-col justify-center items-center;
+
+  .tournament-image{
+    @apply relative rounded-[10px] border-[1px] w-max w-[130px] h-[130px] object-scale-down bg-light border-light mx-auto m-2 p-[2px];
+    @include r-medium{
+      @apply w-[180px] h-[180px];
+    }
+    @include r-plus{
+      @apply w-[240px] h-[240px];
+    }
+    @include r-laptop{
+      @apply w-[288px] h-[288px] rounded-2xl;
+    }
+  }
+  
+  .price--badge {
+    @apply absolute right-[8%] top-[2px] text-lg text-center font-bold leading-3 z-70  w-[49px] h-[59px] text-xs;
+    background: url(https://cyber-battles-dev.s3.amazonaws.com/images/generic/gold-badge.svg) left 0px top 0px /
+      cover no-repeat;
+    img {
+      @apply w-3;
+    }
+    span {
+      @apply text-sm flex items-center justify-center mt-1 gap-1;
+      @include r-medium{
+        @apply text-[24px] mt-3;
+      }
+      @include r-laptop{
+        @apply mt-5;
+      }
+    }
+    @include r-medium{
+      @apply w-[69px] h-[79px] text-sm;
+    }
+    @include r-laptop{
+      @apply w-[98px] h-[105px];
+    }
+  }
+
+  .info{
+    @apply mt-4;
+    h3{
+      @apply text-2xl font-bold leading-none text-center;
+      @include r-plus{
+        @apply text-left;
+      }
+    }
+    h4{
+      @apply font-normal uppercase text-base text-center;
+      @include r-plus{
+        @apply text-left;
+      }
+      span{
+        @apply text-accent--green;
+      }
+    }
+    .team-detail{
+      @apply grid gap-5 my-3.5 mx-2 w-max mx-auto max-w-full;
+      grid-template-columns: repeat(4, minmax(0, auto));
+      h5{
+        @apply text-xs font-normal uppercase;
+        @include r-medium{
+          @apply text-sm;
+        }
+      }
+      p{
+        @apply text-sm font-bold;
+        @include r-medium{
+          @apply text-lg;
+        }
+      }
+      @include r-medium{
+        @apply gap-10;
+      }
+      @include r-plus{
+        @apply w-full my-4;
+      }
+    }
+    .highlights{
+      @apply flex items-stretch justify-center gap-[10px];
+      div{
+        @apply bg-grey rounded-[10px] py-3 px-3;
+        
+        h4{
+          @apply flex gap-4 justify-between text-light uppercase text-[10px] font-normal leading-[1.5rem];
+          span{
+            @apply text-accent--green;
+          }
+          @include r-medium{
+            @apply text-sm;
+          }
+        }
+        h5{
+          @apply text-xs font-bold uppercase;
+          @include r-medium{
+            @apply text-lg;
+          }
+        }
+       ul{
+          @apply text-sm font-light;
+          li{
+            @apply inline-block relative;
+            &:first-child{
+              @apply pr-2;
+              &:after{
+                content:'|';
+                @apply absolute -right-[4%];
+              }
+            }
+            &:last-child{
+              @apply pl-2;
+            }
+            @include r-medium{
+              @apply text-lg;
+            }
+          }
+          @include r-medium{
+            @apply text-lg;
+          }
+        }
+        @include r-laptop{
+          @apply px-6;
+          &:first-child{
+            @apply w-[200px] max-w-full;
+          }
+          &:last-child{
+            @apply w-[245px] max-w-full;
+          }
+        }
+      }
+      @include r-medium{
+        @apply gap-[30px];
+      }
+      @include r-plus{
+        @apply justify-start;
+      }
+    }
+    @include r-laptop{
+      @apply mt-8;
+    }
+  }
+
+  @include r-plus{
+    @apply w-full p-6 flex-row items-start justify-between gap-8;
+  }
+  @include r-laptop{
+    @apply px-[90px] py-[52px] gap-[60px] w-[1030px] rounded-tl-[20px] rounded-tr-[20px];
+  }
+}

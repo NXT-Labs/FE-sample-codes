@@ -1,0 +1,42 @@
+// LATEST NEWS
+.latest-news {
+  @apply grid w-full my-[50px] gap-7;
+  .news--box {
+    @apply w-full block relative rounded-[20px] overflow-hidden;
+    img {
+      @apply w-full;
+    }
+  }
+  .news--excerpt {
+    @apply w-full absolute left-0 bottom-0 pb-6 py-[17px] px-[19px] rounded-[20px] rounded-tr-none rounded-tl-none font-normal;
+    background-color: rgb(6 6 6 / 95%);
+    .news--meta {
+      @apply flex justify-between items-start font-bold mb-4;
+      span {
+        @apply font-medium text-[#92908F] whitespace-nowrap;
+      }
+      @include r-medium {
+        @apply text-xs leading-tight;
+      }
+      @include r-plus {
+        @apply text-sm;
+      }
+    }
+    @include r-medium {
+      @apply text-[11px];
+    }
+    @include r-plus {
+      @apply text-sm;
+    }
+  }
+
+  @include r-xsmall {
+    @apply grid-cols-1;
+  }
+  @include r-medium {
+    @apply grid-cols-2;
+  }
+  @include r-laptop {
+    @apply grid-cols-3;
+  }
+}

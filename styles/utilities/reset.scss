@@ -1,0 +1,14 @@
+html {
+  @apply box-border h-full;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @apply bg-primary h-full;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}

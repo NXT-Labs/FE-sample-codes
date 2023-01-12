@@ -1,0 +1,68 @@
+
+.shop-template{
+  @apply min-w-full min-h-screen pb-96;
+}
+
+.shop-grid {
+  @apply grid grid-cols-1 gap-4 mt-5 mx-4 max-w-full;
+  @include r-small {
+    @apply grid-cols-2;
+  }
+  @include r-medium {
+    @apply grid-cols-3;
+  }
+  @include r-laptop {
+    @apply mx-20;
+  }
+  @include r-large {
+    @apply  grid-cols-6 mx-0;
+  }
+}
+
+.shop-row {
+  @apply mx-5;
+
+  .shop-row-para {
+    @apply text-placeholder font-normal text-sm my-3;
+  }
+
+  .shop-card {
+    @apply flex flex-col items-center text-white border border-[#2C2C2C] rounded-md min-w-full px-4 py-4;
+    &:hover{
+      @apply bg-[#161D2C] cursor-pointer;
+    }
+    .shop-credit-icon {
+      @apply mx-4 items-center;
+    }
+    .shop-credit {
+      @apply flex justify-between items-center bg-[#2A5080] text-sm min-w-[149px] border-[transparent] rounded-[4px] py-2 md:py-3 px-2;
+      @include r-small {
+        @apply min-w-[129px];
+      }
+      @include r-desktop {
+        @apply min-w-[169px];
+      }
+      p {
+        @apply font-normal text-xs;
+      }
+
+      h3 {
+        @apply font-bold;
+      }
+    }
+    .btn-bordered {
+      @apply mt-2 pl-5 min-w-[149px];
+      @include r-small {
+        @apply min-w-[129px];
+      }
+      @include r-desktop {
+        @apply min-w-[169px];
+      }
+    }
+    .shop-package {
+      @apply py-2 ;
+    }
+  }
+  
+ 
+}
